@@ -111,3 +111,50 @@
   function gtag(){window.dataLayer.push(arguments);}
   gtag('js',new Date()); gtag('config',GA_MEASUREMENT_ID);
 })();
+
+// ===== v0.2 =====================================================================
+// Count-up counters: <span class="count" data-count="9440096">  (leave data-count off to show as-is)
+(function(){
+  var els=document.querySelectorAll('[data-count]'); if(!els.length)return;
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function run(el){
+    var target=parseInt(String(el.getAttribute('data-count')).replace(/[^0-9]/g,''),10); if(!target){return;}
+    var fmt=function(n){return n.toLocaleString('en-US');};
+    if(rm){el.textContent=fmt(target);return;}
+    var start=null, dur=1800;
+    function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=fmt(Math.round(target*e)); if(p<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  if(!('IntersectionObserver' in window)){els.forEach(run);return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.3});
+  els.forEach(function(el){io.observe(el);});
+})();
+
+// Savings calculator (#calc): private-trainer spend vs membership. Trainer rate is the visitor's own input.
+(function(){
+  var c=document.getElementById('calc'); if(!c)return;
+  var rate=c.querySelector('#c-rate'), sess=c.querySelector('#c-sess');
+  var tiers=[{name:'Pro · 8 visits',price:199,visits:8},{name:'Hall of Fame · unlimited',price:379,visits:null},{name:'All-Star · unlimited',price:389,visits:null}];
+  var money=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+  function calc(){
+    var r=+rate.value, s=+sess.value, trainer=r*s;
+    c.querySelector('#c-rate-out').textContent=money(r)+'/hr';
+    c.querySelector('#c-sess-out').textContent=s+' / month';
+    c.querySelector('#c-trainer').textContent=money(trainer);
+    var rows=tiers.map(function(t){
+      var ok=t.visits===null||s<=t.visits, diff=trainer-t.price;
+      return '<tr><td>'+t.name+(ok?'':' <span class="cost">(covers '+t.visits+' visits)</span>')+'<br><span class="cost">'+money(t.price)+'/mo, coaching included</span></td><td>'+
+        (diff>0?'<span class="save">save '+money(diff)+'</span>':'<span class="cost">'+money(-diff)+' more</span>')+'</td></tr>';
+    }).join('');
+    c.querySelector('#c-rows').innerHTML=rows;
+  }
+  rate.addEventListener('input',calc); sess.addEventListener('input',calc); calc();
+})();
+
+// Instagram feed via Behold (same vendor as coloradoboom.com). Set data-feed on #ig to the Behold feed id.
+(function(){
+  var ig=document.getElementById('ig'); if(!ig)return;
+  var id=ig.getAttribute('data-feed'); if(!id)return;
+  var s=document.createElement('script'); s.type='module'; s.src='https://w.behold.so/widget.js'; document.head.appendChild(s);
+  var w=document.createElement('behold-widget'); w.setAttribute('feed-id',id); ig.innerHTML=''; ig.appendChild(w);
+})();

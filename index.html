@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Sections: [NAV] header · [HM-01] hero · [HM-02] trust strip · [HM-03] how it works · [HM-04] technology
-     · [HM-05] programs · [HM-06] pricing · [HM-07] why Denver / numbers · [HM-08] visit · [HM-09] app
-     · [HM-10] FAQ · [HM-11] CTA band · [FT] footer. Shared blocks are copy-pasted into every page. -->
+<!-- Sections: [NAV] header · [HM-01] hero · [HM-02] trust strip · [HM-COUNT] shots counter · [HM-03] how it works
+     · [HM-04] technology · [HM-BEN] benefits · [HM-05] programs · [HM-06] pricing · [HM-07] why Denver / numbers
+     · [HM-REV] Google rating · [HM-08] visit · [HM-09] app · [HM-IG] Instagram · [HM-10] FAQ · [HM-11] CTA · [FT] footer.
+     Shared blocks are copy-pasted into every page. Yellow class="tbd" = owner to fill; preflight fails while any remain. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Shoot 360 Denver | Basketball Training in Aurora, CO — Get Better Faster</title>
-<meta name="description" content="NBA-grade shooting and skills technology inside FieldhouseUSA in Aurora, Colorado. Real-time feedback on every shot, 300+ reps in 30 minutes, and a free first workout. Memberships from $159/mo.">
+<meta name="description" content="NBA-grade shooting and skills technology inside FieldhouseUSA in Aurora, Colorado. Real-time feedback on every shot, 300+ reps in 30 minutes, coaching included in every membership, and a free first workout. From $159/mo.">
 <link rel="canonical" href="https://www.shoot360denver.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shoot 360 Denver — Basketball Training in Aurora, CO">
@@ -17,21 +18,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Rajdhani-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
 <!-- Google Search Console — paste the real token and uncomment:
 <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Shoot 360 Denver","url":"https://www.shoot360denver.com/","telephone":"+1-720-262-5501","email":"info@shoot360denver.com","image":"https://www.shoot360denver.com/assets/img/og-image.jpg","description":"Technology-based basketball training facility inside FieldhouseUSA in Aurora, Colorado. Splash Meter shooting courts, passing and ball-handling skill courts, memberships, camps and clinics.","address":{"@type":"PostalAddress","streetAddress":"14200 E Alameda Ave, inside FieldhouseUSA","addressLocality":"Aurora","addressRegion":"CO","postalCode":"80012","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"13:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],"priceRange":"$72–$389","sameAs":["https://www.instagram.com/shoot360denver/","https://www.facebook.com/shoot360denver"],"parentOrganization":{"@type":"Organization","name":"Shoot 360","url":"https://www.shoot360.com/"}}
+{"@context":"https://schema.org","@type":"SportsActivityLocation","@id":"https://www.shoot360denver.com/#location","name":"Shoot 360 Denver","url":"https://www.shoot360denver.com/","telephone":"+1-720-262-5501","email":"info@shoot360denver.com","image":"https://www.shoot360denver.com/assets/img/og-image.jpg","logo":"https://www.shoot360denver.com/assets/img/logo-denver.png","description":"Technology-based basketball training facility inside FieldhouseUSA in Aurora, Colorado. Splash Meter shooting courts, passing and ball-handling skill courts, memberships with coaching included, camps, clinics, homeschool sessions and birthday parties.","address":{"@type":"PostalAddress","streetAddress":"14200 E Alameda Ave, inside FieldhouseUSA","addressLocality":"Aurora","addressRegion":"CO","postalCode":"80012","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":39.7092942,"longitude":-104.822972},"hasMap":"https://maps.google.com/?cid=8030805088891520148","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"13:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],"priceRange":"$72–$389","sameAs":["https://www.instagram.com/shoot360denver/","https://www.facebook.com/shoot360denver","https://maps.google.com/?cid=8030805088891520148"],"parentOrganization":{"@type":"Organization","name":"Shoot 360","url":"https://www.shoot360.com/"}}
 </script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- [ANN] Announcement bar. Optional. Add data-show-until="YYYY-MM-DD" to retire it automatically.
-<div class="ann" data-show-until="2026-12-31">Fall hours are in effect: Mon–Fri 1–9 PM · Sat–Sun 10 AM–5 PM · <a href="programs.html#free">Book your free workout</a></div>
+<div class="ann" data-show-until="2026-12-31">Homeschool sessions now weekdays 2–4 PM · <a href="programs.html#homeschool">Details</a></div>
 -->
 
 <!-- [NAV] -->
@@ -43,6 +44,7 @@
       <ul id="primary-nav" class="nav-links">
         <li><a href="technology.html">Technology</a></li>
         <li><a href="programs.html">Programs &amp; Pricing</a></li>
+        <li><a href="parties.html">Parties</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Visit Us</a></li>
         <li><a class="btn btn-primary btn-sm" href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Book a Free Workout</a></li>
@@ -61,7 +63,7 @@
   <div class="wrap">
     <p class="eyebrow">Aurora, Colorado · Inside FieldhouseUSA</p>
     <h1 id="hero-h">Get Better<br>Faster.</h1>
-    <p class="lead">NBA-grade shooting and skills technology, real-time feedback on every rep, and coaches who turn the numbers into your game. Your first workout is on us.</p>
+    <p class="lead">NBA-grade shooting and skills technology, real-time feedback on every rep, and a coach on the floor with you, included in every membership. Your first workout is on us.</p>
     <div class="btns">
       <a class="btn btn-primary" href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Book a Free Workout</a>
       <a class="btn btn-ghost" href="programs.html">Programs &amp; Pricing</a>
@@ -84,6 +86,16 @@
   </div>
 </section>
 
+<!-- [HM-COUNT] Live counter. Owner: set data-count to the current total from the Shoot 360 dashboard (digits only)
+     and delete the inner <span class="tbd">. The number counts up when scrolled into view. -->
+<section class="sec-ink counter" aria-labelledby="cnt-h">
+  <div class="wrap">
+    <h2 id="cnt-h" class="sr">Shots tracked</h2>
+    <span class="n" data-count=""><span class="tbd">TBD</span></span>
+    <span class="l">shots tracked at Shoot 360 Denver</span>
+  </div>
+</section>
+
 <!-- [HM-03] How it works -->
 <section class="sec" aria-labelledby="how-h">
   <div class="wrap">
@@ -91,7 +103,7 @@
     <h2 id="how-h">Three steps to a better shot</h2>
     <div class="grid g3 steps mt2">
       <div class="step reveal"><h3>Book a free evaluation</h3><p>Pick a time online. A coach meets you on the court, you shoot on the Splash Meter, and you leave with a baseline on arc, depth and alignment.</p></div>
-      <div class="step reveal"><h3>Train on the technology</h3><p>Dedicated shooting courts and skill courts turn every session into 300+ measured reps. The machines rebound; you shoot.</p></div>
+      <div class="step reveal"><h3>Train with a coach on the tech</h3><p>Dedicated shooting courts and skill courts turn every session into 300+ measured reps. A coach reads the numbers with you; that coaching is included.</p></div>
       <div class="step reveal"><h3>Track it in the app</h3><p>Every workout lands in the Shoot 360 app: shot charts, streaks, achievements, and a booking calendar for your next session.</p></div>
     </div>
   </div>
@@ -115,16 +127,30 @@
   </div>
 </section>
 
+<!-- [HM-BEN] Benefits -->
+<section class="sec" aria-labelledby="ben-h">
+  <div class="wrap">
+    <p class="eyebrow">Why Shoot 360</p>
+    <h2 id="ben-h">What changes when every rep is measured</h2>
+    <div class="benefits mt2">
+      <div class="benefit reveal"><span class="k">Objective</span><h3>No more guessing</h3><p>A missed shot has a reason: arc, depth or alignment. The Splash Meter names it instantly, and the player fixes that one thing on the next rep.</p></div>
+      <div class="benefit reveal"><span class="k">300+</span><h3>Volume with correction</h3><p>Automatic rebounding puts 300 or more shots into a 30-minute session, each one scored. That is a week of gym time compressed into half an hour.</p></div>
+      <div class="benefit reveal"><span class="k">Coached</span><h3>A coach on the floor, included</h3><p>The technology shows what happened; a Shoot 360 coach shows why and what to change. Coaching is part of every membership here, never an add-on.</p></div>
+    </div>
+    <div class="center mt2"><a class="btn btn-ghost" href="technology.html">How the technology works</a></div>
+  </div>
+</section>
+
 <!-- [HM-05] Programs -->
-<section class="sec" aria-labelledby="prog-h">
+<section class="sec sec-ink" aria-labelledby="prog-h">
   <div class="wrap">
     <p class="eyebrow">Programs</p>
     <h2 id="prog-h">Ways to train</h2>
     <div class="grid g4 mt2">
       <a class="card reveal" href="programs.html#free"><img src="assets/img/tech-shooting-kid.jpg" alt="Young player shooting on a Splash Meter court" width="1200" height="941" loading="lazy"><div class="card-body"><h3>Free evaluation</h3><p>Your first session is free. Meet a coach, shoot on the tech, see your numbers.</p><span class="more">Book it →</span></div></a>
-      <a class="card reveal" href="programs.html#memberships"><img src="assets/img/facility-shooting-bays.jpg" alt="Shooting bays with Splash Meter hoops" width="1200" height="890" loading="lazy"><div class="card-body"><h3>Memberships</h3><p>4 visits, 8 visits or unlimited. App booking, member pricing on programs.</p><span class="more">See tiers →</span></div></a>
-      <a class="card reveal" href="programs.html#camps"><img src="assets/img/coaching-lineup.jpg" alt="Coach leading a group of youth players through a drill" width="1600" height="900" loading="lazy"><div class="card-body"><h3>Camps, classes &amp; clinics</h3><p>Group training for all ages and skill levels, taught by certified Shoot 360 coaches.</p><span class="more">What's on →</span></div></a>
-      <a class="card reveal" href="programs.html#nike"><img src="assets/img/coaching-huddle.jpg" alt="Players huddled with a coach on the court" width="1200" height="800" loading="lazy"><div class="card-body"><h3>Nike Basketball Camps</h3><p>Official Nike camps hosted at Shoot 360 Denver each summer through US Sports Camps.</p><span class="more">Camp details →</span></div></a>
+      <a class="card reveal" href="programs.html#memberships"><img src="assets/img/facility-shooting-bays.jpg" alt="Shooting bays with Splash Meter hoops" width="1200" height="890" loading="lazy"><div class="card-body"><h3>Memberships</h3><p>4 visits, 8 visits or unlimited. Coaching included, family discounts, app booking.</p><span class="more">See tiers →</span></div></a>
+      <a class="card reveal" href="programs.html#camps"><img src="assets/img/coaching-lineup.jpg" alt="Coach leading a group of youth players through a drill" width="1600" height="900" loading="lazy"><div class="card-body"><h3>Camps, clinics &amp; homeschool</h3><p>Group training for all ages, Nike Basketball Camps each summer, and homeschool sessions weekdays 2–4 PM.</p><span class="more">What's on →</span></div></a>
+      <a class="card reveal" href="parties.html"><img src="assets/img/coaching-huddle.jpg" alt="Players huddled with a coach on the court" width="1200" height="800" loading="lazy"><div class="card-body"><h3>Birthday parties</h3><p>Private court time, a coach running the games, and a Splash Meter leaderboard finish.</p><span class="more">Party packages →</span></div></a>
     </div>
   </div>
 </section>
@@ -134,15 +160,15 @@
   <div class="wrap">
     <p class="eyebrow">Memberships</p>
     <h2 id="price-h">Pick your membership</h2>
-    <p class="lead">Every tier includes the shooting and skill courts, performance tracking in the app, and member pricing on programs.</p>
+    <p class="lead">Every tier includes a coach during your sessions, the shooting and skill courts, performance tracking in the app, and member pricing on programs and parties.</p>
     <div class="tiers mt2">
-      <div class="tier reveal"><h3>Rookie</h3><div class="visits">4<small>visits / month</small></div><div class="price">$159<small>/mo</small></div><ul><li>3-month commitment</li><li>$39.75 per visit</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
-      <div class="tier reveal"><h3>Pro</h3><div class="visits">8<small>visits / month</small></div><div class="price">$199<small>/mo</small></div><ul><li>3-month commitment</li><li>1 personal coaching session</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
-      <div class="tier hot reveal"><span class="tag">Most popular</span><h3>Hall of Fame</h3><div class="visits">∞<small>unlimited visits + classes</small></div><div class="price">$379<small>/mo</small></div><ul><li>12-month commitment</li><li>2 personal coaching sessions</li><li>15% off camps, clinics, combines</li></ul><a class="btn btn-primary btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
-      <div class="tier reveal"><h3>All-Star</h3><div class="visits">∞<small>unlimited visits + classes</small></div><div class="price">$389<small>/mo</small></div><ul><li>3-month commitment</li><li>2 personal coaching sessions</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
+      <div class="tier reveal"><h3>Rookie</h3><div class="visits">4<small>visits / month</small></div><div class="price">$159<small>/mo</small></div><ul><li>Coaching included</li><li>3-month commitment</li><li>$39.75 per visit</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
+      <div class="tier reveal"><h3>Pro</h3><div class="visits">8<small>visits / month</small></div><div class="price">$199<small>/mo</small></div><ul><li>Coaching included · 1 one-on-one session</li><li>3-month commitment</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
+      <div class="tier hot reveal"><span class="tag">Most popular</span><h3>Hall of Fame</h3><div class="visits">∞<small>unlimited visits + classes</small></div><div class="price">$379<small>/mo</small></div><ul><li>Coaching included · 2 one-on-one sessions</li><li>12-month commitment</li><li>15% off camps, clinics, combines</li></ul><a class="btn btn-primary btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
+      <div class="tier reveal"><h3>All-Star</h3><div class="visits">∞<small>unlimited visits + classes</small></div><div class="price">$389<small>/mo</small></div><ul><li>Coaching included · 2 one-on-one sessions</li><li>3-month commitment</li></ul><a class="btn btn-outline-dark btn-sm" href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">Join</a></div>
     </div>
-    <p class="fine mt1">Also available: 12-visit pack $480 (no commitment) and a $72 guest workout. Prices from Shoot 360's Denver pricing page on Sept 16, 2026; the <a href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">live pricing page</a> is authoritative. Coaching sessions included with a tier are non-recurring.</p>
-    <div class="btns mt1"><a class="btn btn-dark" href="programs.html#memberships">Compare all options</a><a class="btn btn-outline-dark" href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Try it free first</a></div>
+    <p class="fine mt1">Also available: 12-visit pack $480 (no commitment), a $72 guest workout, and family discounts for households with more than one athlete. Prices from Shoot 360's Denver pricing page on Sept 16, 2026; the <a href="https://www.shoot360.com/membership-pricing?locationId=5739019" target="_blank" rel="noopener">live pricing page</a> is authoritative.</p>
+    <div class="btns mt1"><a class="btn btn-dark" href="programs.html#memberships">Compare all options</a><a class="btn btn-outline-dark" href="programs.html#calc">Trainer vs. membership calculator</a></div>
   </div>
 </section>
 
@@ -173,6 +199,20 @@
   </div>
 </section>
 
+<!-- [HM-REV] Google rating — 4.7 stars read from the Google Business listing on 2026-09-16. Refresh the number when it moves.
+     Featured quotes go in a .reviews grid here once the owner pulls them from the Business Profile. -->
+<section class="sec sec-light" aria-labelledby="rev-h">
+  <div class="wrap center">
+    <p class="eyebrow">Reviews</p>
+    <h2 id="rev-h">4.7 stars on Google</h2>
+    <p class="lead">Families rate Shoot 360 Denver 4.7 out of 5 on Google. Read what they say, or leave your own after your free workout.</p>
+    <div class="btns mt1" style="justify-content:center">
+      <a class="gbadge" href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span> 4.7 on Google · Read reviews</a>
+      <a class="btn btn-outline-dark" href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Write a review</a>
+    </div>
+  </div>
+</section>
+
 <!-- [HM-08] Visit -->
 <section class="sec sec-ink" id="visit" aria-labelledby="visit-h">
   <div class="wrap">
@@ -184,6 +224,7 @@
         <table class="hours"><tbody>
           <tr><td>Monday – Friday</td><td>1:00 – 9:00 PM</td></tr>
           <tr><td>Saturday – Sunday</td><td>10:00 AM – 5:00 PM</td></tr>
+          <tr><td>Homeschool sessions, Mon – Fri</td><td>2:00 – 4:00 PM</td></tr>
         </tbody></table>
         <h3 class="mt2">Find us</h3>
         <p class="addr">FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012<br>
@@ -217,14 +258,23 @@
   </div>
 </section>
 
+<!-- [HM-IG] Instagram. Set data-feed on #ig to the Behold feed id (same vendor as coloradoboom.com) and the grid fills itself. -->
+<section class="sec sec-ink" aria-labelledby="ig-h">
+  <div class="wrap">
+    <div class="center"><p class="eyebrow">Instagram</p><h2 id="ig-h">@shoot360denver</h2></div>
+    <div id="ig" class="ig-grid mt2" data-feed=""></div>
+    <div class="center mt2"><a class="btn btn-ghost" href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+  </div>
+</section>
+
 <!-- [HM-10] FAQ (top 5; full list on faq.html) -->
 <section class="sec sec-light" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="center"><p class="eyebrow">Questions</p><h2 id="faq-h">Good to know</h2></div>
     <div class="faq mt2">
       <div class="faq-item"><button class="faq-q" type="button">Is the first workout really free?</button><div class="faq-a"><p>Yes. The free workout is for first-time visitors and local residents; a parent or guardian attends with minors. Book it online and a coach will meet you on the court.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Is coaching extra?</button><div class="faq-a"><p>No. Every membership includes private training and coaching. A coach works with you during your sessions at no additional fee; Pro, All-Star and Hall of Fame add scheduled one-on-one sessions on top.</p></div></div>
       <div class="faq-item"><button class="faq-q" type="button">Who is Shoot 360 for?</button><div class="faq-a"><p>Players of all ages and skill levels — youth just learning the fundamentals through high-school, college and adult athletes. Camps, classes and clinics are grouped by age and level.</p></div></div>
-      <div class="faq-item"><button class="faq-q" type="button">What does a membership visit include?</button><div class="faq-a"><p>Access to the Splash Meter shooting courts and the passing and ball-handling skill courts, with every rep tracked in the Shoot 360 app. Unlimited tiers add unlimited classes.</p></div></div>
       <div class="faq-item"><button class="faq-q" type="button">Can I come once without joining?</button><div class="faq-a"><p>Yes. A guest workout is $72, and a 12-visit pack is $480 with no commitment. Drop-ins are booked in the app when space permits.</p></div></div>
       <div class="faq-item"><button class="faq-q" type="button">Where do I park and enter?</button><div class="faq-a"><p>We are inside FieldhouseUSA at 14200 E Alameda Ave in Aurora. Park in the FieldhouseUSA lot and come through the main entrance.</p></div></div>
     </div>
@@ -255,9 +305,9 @@
           <a href="https://play.google.com/store/apps/details?id=com.Shoot360.Mobile" target="_blank" rel="noopener"><span>Get it on<b>Google Play</b></span></a>
         </div>
       </div>
-      <div><h4>Visit</h4><ul><li>FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
-      <div><h4>Hours</h4><ul><li>Mon – Fri: 1 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="technology.html">Technology</a></li><li><a href="programs.html">Programs &amp; Pricing</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div><h3>Visit</h3><ul><li>FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
+      <div><h3>Hours</h3><ul><li>Mon – Fri: 1 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="programs.html">Programs &amp; Pricing</a></li><li><a href="parties.html">Birthday Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
     </div>
     <div class="legal">
       <span>© 2026 Shoot 360 Denver. An independently owned and operated Shoot 360 location.</span>
