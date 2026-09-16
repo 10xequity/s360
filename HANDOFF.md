@@ -9,7 +9,7 @@
 - Lighthouse mobile: 100 / 100 / 100 (accessibility, best practices, SEO) on home, programs, parties.
   Home CLS 0.00, LCP 326 ms locally. Fonts are self-hosted; no third-party request before first paint.
 - `python scripts/preflight.py --external` must exit 0 before DNS moves. Today it reports
-  **27 yellow placeholders** (`class="tbd"`) and nothing else.
+  **23 yellow placeholders** (`class="tbd"`) and nothing else.
 - Everything from the Wix site is preserved under `wix-archive/` (see its README).
 - Analysis: `docs/gap-analysis_v1_2026-09-16.md`, `docs/franchise-research_v1_2026-09-16.md`,
   `docs/site-design-spec_v1_2026-09-16.md`; live ledger artifact "Denver Gap Ledger".

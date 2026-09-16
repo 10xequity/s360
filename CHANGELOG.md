@@ -45,7 +45,7 @@ still points at Wix; DNS moves after the owner signs off on the content.
 - **`scripts/preflight.py`** added: fails on any missing local link/asset/anchor, image without alt,
   bad JSON-LD, page missing from the sitemap, unreachable outbound link (`--external`), or any
   remaining `class="tbd"` placeholder. Current state: 7 pages, 11 outbound links all reachable,
-  27 placeholders, 0 problems. It must exit 0 before go-live.
+  23 placeholders, 0 problems. It must exit 0 before go-live.
 - Link check note: the MySpark grant page rejects HEAD requests but serves normally; the checker
   falls back to GET for that reason.
 

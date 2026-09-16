@@ -50,7 +50,7 @@ for f in pages:
     for im in re.findall(r'<img[^>]*>', h):
         if 'alt=' not in im:
             problems.append(f'{f}: img without alt: {im[:70]}')
-    n = len(re.findall(r'class="tbd', h)); tbd += n
+    n = len(re.findall(r'class="tbd', re.sub(r'<!--.*?-->', '', h, flags=re.S))); tbd += n  # ignore mentions inside comments
     if n:
         print(f'  {f}: {n} review placeholder(s) (class="tbd")')
 
