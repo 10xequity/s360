@@ -9,8 +9,8 @@ The Wix site had one job, "apply for membership", and did it behind a wall: no p
 matched HQ, no free-workout offer in the words every other franchise uses, and broken template
 links in the footer. Against 19 sister sites, Denver was last or tied-last on nine of fifteen
 marketing features. Site v0.1 in this repo closes the eleven gaps that needed no owner input; the
-remaining four (coach bios, testimonials, a working inquiry form, and any added offerings) need
-content or a vendor decision from the owner.
+remaining five (coach bios, testimonials, a working inquiry form, a class schedule if one exists,
+and any added offerings such as parties or rentals) need content or a vendor decision from the owner.
 
 ## 2. What the Wix site actually had (audit, 2026-09-16)
 
