@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /wix-archive/
+
+Sitemap: https://www.shoot360denver.com/sitemap.xml
