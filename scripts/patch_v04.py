@@ -224,8 +224,8 @@ s = rep(s, '<p class="addr">FieldhouseUSA<br>14200 E Alameda Ave', f'<p class="a
 s = rep(s, 'destination=14200+E+Alameda+Ave,+Aurora,+CO+80012', f'destination={MAP_Q}', f)
 s = rep(s, 'maps?q=14200+E+Alameda+Ave,+Aurora,+CO+80012&amp;output=embed', f'maps?q={MAP_Q}&amp;output=embed', f)
 # home FAQ answers that named the old tiers
-s = rep(s, '<p>No. Every membership includes private training and coaching. A coach works with you during your sessions at no additional fee; Pro, All-Star and Hall of Fame add scheduled one-on-one sessions on top.</p>',
-        '<p>No. Every membership includes a coach on the floor during your sessions at no additional fee. Private one-on-one training is arranged individually with a coach.</p>', f)
+s = s.replace('<p>No. Every membership includes private training and coaching. A coach works with you during your sessions at no additional fee; Pro, All-Star and Hall of Fame add scheduled one-on-one sessions on top.</p>',
+        '<p>No. Every membership includes a coach on the floor during your sessions at no additional fee. Private one-on-one training is arranged individually with a coach.</p>')  # v0.3 -> v0.4.1; the v0.4 text is handled below
 s = s.replace('<p>No. Every membership includes a coach on the floor during your sessions at no additional fee. Personal training add-ons are available for dedicated one-on-one time.</p>',
               '<p>No. Every membership includes a coach on the floor during your sessions at no additional fee. Private one-on-one training is arranged individually with a coach.</p>')  # v0.4 -> v0.4.1
 s = s.replace('<div class="faq-item"><button class="faq-q" type="button">Can I come once without joining?</button><div class="faq-a"><p>Yes. A guest workout is $72, and a 12-visit pack is $480 with no commitment. Drop-in times are booked in the app when space permits.</p></div></div>',
