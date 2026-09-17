@@ -158,3 +158,41 @@
   var s=document.createElement('script'); s.type='module'; s.src='https://w.behold.so/widget.js'; document.head.appendChild(s);
   var w=document.createElement('behold-widget'); w.setAttribute('feed-id',id); ig.innerHTML=''; ig.appendChild(w);
 })();
+
+// ===== v0.3 =====================================================================
+// Programs dropdown: click toggles (touch + keyboard); CSS handles hover on desktop.
+(function(){
+  var items=document.querySelectorAll('.has-sub'); if(!items.length)return;
+  items.forEach(function(li){
+    var b=li.querySelector('.sub-toggle'); if(!b)return;
+    b.addEventListener('click',function(e){e.stopPropagation();var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));});
+    li.addEventListener('keydown',function(e){if(e.key==='Escape'){b.setAttribute('aria-expanded','false');b.focus();}});
+  });
+  document.addEventListener('click',function(){items.forEach(function(li){var b=li.querySelector('.sub-toggle');if(b)b.setAttribute('aria-expanded','false');});});
+})();
+
+// Live shots estimate (#shots). Baseline count at a fixed moment, plus a model of shots taken since,
+// during opening hours only. Every visitor sees the same number at the same instant.
+//   4 shooting bays x 300 shots per 30-minute session = 600 shots per bay-hour when a bay is busy.
+//   Utilisation shares below are the tuning knobs (prime time evenings and weekends are busier).
+(function(){
+  var el=document.getElementById('shots'); if(!el)return;
+  var BASE=375000, EPOCH=Date.UTC(2026,8,16,6,0,0); // 375,000 shots as of 2026-09-16 00:00 America/Denver (UTC-6)
+  var BAYS=4, PER_BAY_HOUR=600;
+  var SHARE={weekday:[[13,16,0.35],[16,21,0.85]], weekend:[[10,13,0.55],[13,17,0.70]]}; // [open hour, close hour, share of bays busy]
+  var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Denver',hour12:false,weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  function parts(ms){var o={};fmt.formatToParts(new Date(ms)).forEach(function(x){o[x.type]=x.value});o.h=(+o.hour%24)+(+o.minute)/60+(+o.second)/3600;o.we=(o.weekday==='Sat'||o.weekday==='Sun');return o;}
+  function rateAt(p){var bands=p.we?SHARE.weekend:SHARE.weekday;for(var i=0;i<bands.length;i++){if(p.h>=bands[i][0]&&p.h<bands[i][1])return bands[i][2]*BAYS*PER_BAY_HOUR;}return 0;}
+  function dayTotal(we,upToHour){var bands=we?SHARE.weekend:SHARE.weekday,t=0;bands.forEach(function(b){var end=Math.min(b[1],upToHour);if(end>b[0])t+=(end-b[0])*b[2]*BAYS*PER_BAY_HOUR;});return t;}
+  function estimate(now){
+    var total=0, dayMs=86400000, t=EPOCH;
+    // full days from the epoch up to yesterday (Denver), then today's partial
+    var today=parts(now), key=function(p){return p.year+p.month+p.day;};
+    while(key(parts(t))!==key(today)){total+=dayTotal(parts(t+12*3600000).we,24);t+=dayMs;}
+    total+=dayTotal(today.we,today.h);
+    return BASE+total;
+  }
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function render(){var now=Date.now();el.textContent=Math.floor(estimate(now)).toLocaleString('en-US');var live=rateAt(parts(now))>0;el.setAttribute('data-live',live?'1':'0');}
+  render(); if(!rm) setInterval(render,1000); else setInterval(render,60000);
+})();

@@ -2,6 +2,47 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.3 — 2026-09-16 (late) — Owner's second review
+
+**Structure.**
+- **Memberships is its own page** (`memberships.html`): coaching-included section, four tiers, family
+  discounts, packs and guest workout, savings calculator, policies, app download. Programs page now
+  holds evaluation, classes, camps, leagues, Basketball Club (Team EVO), private training, homeschool,
+  parties, MySpark, teams.
+- **Navigation regenerated on every page**: Technology · Memberships · Programs ▾ (All programs, Classes,
+  Camps, Leagues, Basketball Club → teamevo.org, Private Training → mailto) · Parties · FAQ · Visit Us ·
+  **New Membership** CTA (→ memberships) with more spacing. Dropdown is a real button with
+  `aria-expanded`; hover opens it on desktop, tap on mobile, Escape closes. Mobile breakpoint moved to
+  1024 px because the bar is wider.
+- **Direct contract links.** Every Join button goes straight to that tier's signup in Shoot 360's
+  system, bypassing HQ's pricing page whose copy the owner says is wrong: Rookie 151 · Pro 152 ·
+  All-Star 154 · Hall of Fame 156 · 12-visit pack 158 · guest 157 (`membership-checkout?locationid=5739019&…`).
+  Mapping read off the HQ page's own buttons in a browser; all six URLs return 200.
+
+**Wording.** "Free" is gone from the site (the only remaining instance is "of my own free will" in the
+waiver). Primary CTA is **Book an Evaluation**; copy says "come evaluate". Every class, camp, league,
+drop-in and homeschool mention now says **Register in the Shoot 360 app** with badges.
+
+**Home.** MySpark Denver CTA banner directly under the hero in the program's navy with its logo.
+**Live shots counter**: 375,000 baseline at 2026-09-16 00:00, plus a model of shots since (4 bays ×
+600 shots per busy bay-hour × utilisation: weekdays 35% 1–4 PM, 85% 4–9 PM; weekends 55% 10–1,
+70% 1–5). Deterministic, ticks once a second while open, label says "live estimate". Programs grid
+now Memberships / Classes & camps / Leagues & club / Parties.
+
+**Brand and type.** Header and footer use the red-and-white Shoot 360 Basketball lockup
+(`basketball (3).png` from the logo pack). Official Apple App Store (SVG) and Google Play badges
+replace the text badges. Hours, phone and address text sizes increased (hero meta 14→18 px, hours
+16→18, address 17→19, footer 15→17). Technology benefits grid moved to a dark section with headings in
+Splash Meter green `#22D478` (sampled from the HUD photo) — it had been black text on dark cards.
+
+**Privacy.** `legal.html#services` "Data and third-party services": what each integration collects
+(Shoot 360 membership system, GoHighLevel forms, the app, Google Maps and reviews, Behold/Instagram,
+calculator and counter, GitHub Pages hosting, analytics status, children, your choices). Footer links
+to it; contact form slot carries a one-line data note.
+
+**Checks.** Lighthouse mobile 100 / 100 / 100 on home, memberships, programs. Pre-flight: 8 pages,
+23 outbound links reachable, 22 placeholders, 0 problems.
+
 ## v0.2 — 2026-09-16 — Owner directives, review deployment
 
 **Repo public, Pages on.** Review URL `https://10xequity.github.io/shoot360-denver-site/`. The domain
@@ -11,43 +52,23 @@ still points at Wix; DNS moves after the owner signs off on the content.
 - **Birthday parties** are sold: new `parties.html` (three packages, how it works, party FAQ, request
   section), plus a card on home, a section on programs, a nav item and a footer link on every page.
   Prices, athlete caps, durations, deposit and lead time are yellow placeholders until supplied.
-- **Coaching is included in every membership.** Dedicated section on programs, tier bullets reworded
-  ("Coaching included · N one-on-one sessions"), hero and FAQ updated, policies section explains the
-  difference between floor coaching (never expires) and bundled one-on-ones (monthly).
-- **Homeschool sessions, weekdays 2–4 PM**: section on programs, row in both hours tables, FAQ, home card.
-- **Savings calculator** on programs: visitor sets trainer rate and sessions/month; shows monthly
-  saving vs Pro, Hall of Fame and All-Star. The trainer rate is the visitor's input, not a claim.
+- **Coaching is included in every membership.** Dedicated section, tier bullets reworded, hero and FAQ
+  updated, policies section explains floor coaching (never expires) vs bundled one-on-ones (monthly).
+- **Homeschool sessions, weekdays 2–4 PM**: section, hours tables, FAQ, home card.
+- **Savings calculator**: visitor sets trainer rate and sessions/month; shows monthly saving vs Pro,
+  Hall of Fame and All-Star. The trainer rate is the visitor's input, not a claim.
 - **Family discounts** callout and FAQ (percentages are placeholders).
 - **Membership policies** section: pausing (terms are placeholders), commitments, coaching sessions.
-- **Live shots-tracked counter** on home. Same mechanism Huntsville uses: a hand-set number with a
-  count-up animation; Shoot 360 exposes no data feed. Number is a placeholder.
-- **Google Business Profile connected.** Listing found (4.7 stars, CID 8030805088891520148):
-  rating badge, "Read reviews" and "Write a review" links on home, "Reviews on Google" in every
-  footer, listing URL in `sameAs` and `hasMap` schema. Review text is not readable without the
-  owner's login, so no quotes were added.
-- **Instagram**: section on home wired for a Behold feed (`#ig[data-feed]`), the same vendor behind
-  coloradoboom.com. Grid hides until a feed id is set.
-- **GoHighLevel form slots** on contact (`#ghl-contact`) and parties (`#ghl-party`), hidden until the
-  embed code is pasted.
+- **Google Business Profile connected.** Listing found (4.7 stars, CID 8030805088891520148): rating
+  badge, review links, "Reviews on Google" in every footer, listing in `sameAs`/`hasMap` schema.
+- **Instagram**: home section wired for a Behold feed (`#ig[data-feed]`); grid hides until a feed id is set.
+- **GoHighLevel form slots** on contact (`#ghl-contact`) and parties (`#ghl-party`), hidden until pasted.
 - **Benefits copy**: six-point grid on technology, three-point version on home.
 
-**Quality passes.**
-- **Fonts self-hosted** (`assets/fonts/`, Rajdhani 600/700 + one variable Open Sans file, latin subset,
-  preloaded). Reason: the performance trace showed CLS 0.34 with every shift caused by Google-hosted
-  font swaps; after the change CLS is 0.00 and LCP 326 ms on the home page. Also removes the last
-  third-party request on first paint.
-- `img,video{height:auto}` added to the base rule: images carry HTML height attributes and CSS set
-  only width, which Lighthouse flagged as distorted aspect ratio on two pages.
-- Footer headings changed from `h4` to `h3` (Lighthouse heading-order).
-- `.tiers.t3` class replaces an inline three-column style that broke the phone layout on parties.
-- **Lighthouse (mobile) after fixes**: home, programs, parties each 100 accessibility / 100 best
-  practices / 100 SEO. Console clean.
-- **`scripts/preflight.py`** added: fails on any missing local link/asset/anchor, image without alt,
-  bad JSON-LD, page missing from the sitemap, unreachable outbound link (`--external`), or any
-  remaining `class="tbd"` placeholder. Current state: 7 pages, 11 outbound links all reachable,
-  23 placeholders, 0 problems. It must exit 0 before go-live.
-- Link check note: the MySpark grant page rejects HEAD requests but serves normally; the checker
-  falls back to GET for that reason.
+**Quality passes.** Fonts self-hosted and preloaded (CLS 0.34 → 0.00). `img{height:auto}` (distorted
+aspect flags). Footer headings `h4`→`h3`. `.tiers.t3` replaces an inline grid style that broke the
+phone layout. `scripts/preflight.py` added (links, anchors, alt, schema, sitemap, placeholders,
+`--external`). MySpark grant link rejects HEAD but serves GET; checker falls back.
 
 ## v0.1 — 2026-09-16 — Initial build (private, not live)
 
@@ -61,17 +82,8 @@ Found and recorded the live defects: template-default `mailto:info@mysite.com` a
 marketing features; collected price points from 9 franchises; read Denver's live prices from HQ's
 pricing page (`locationId=5739019`). Written up in `docs/`.
 
-**Site.** Six static pages on the coloradoboom.com stack. Decisions worth knowing:
-- The one red button everywhere is **Book a Free Workout**, to the same SalonCloud form Wix used.
-  Every franchise leads with the free workout; Denver's Wix called it "apply for membership".
-- **Prices are shown** (a first for Denver) with "Join" links into HQ's live Denver pricing page so
-  contract and payment stay in Shoot 360's system. Fine print names the live page as authoritative.
-- **Hours are HQ's** (Mon–Fri 1–9, Sat–Sun 10–5), not Wix's 9–9. Flagged for the owner.
-- **Fonts are Rajdhani + Open Sans** (shoot360.com's faces, free). The archived Gotham/Tungsten files
-  are licensed and were not shipped.
-- **Red tokens split**: `#E0001B` for fills (white text on it measures 5.0:1), `#FF2A3C` for small red
-  text on black (5.3:1). The brand `#EF001D` fails AA for both by a hair.
-- `/about` was **dropped**, not rebuilt: it was template filler. Returns when real coach bios exist.
-- `legal.html` is `noindex`; `wix-archive/` is disallowed in `robots.txt` so old pages are not
-  indexed as duplicates.
-- Branch is `main` (lowercase) on purpose; the sister repos' capital-M `Main` is a documented trap.
+**Site.** Six static pages on the coloradoboom.com stack: one red button everywhere (booking form
+every franchise uses), prices shown with links into HQ's system, HQ's hours (flagged), Rajdhani +
+Open Sans (shoot360.com's faces), contrast-safe red tokens (`#E0001B` fills, `#FF2A3C` small text),
+`/about` dropped as template filler, `legal.html` noindex, `wix-archive/` disallowed in robots,
+branch `main` lowercase on purpose.

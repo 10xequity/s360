@@ -4,7 +4,7 @@
 @font-face{font-family:'Rajdhani';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/Rajdhani-700.woff2) format('woff2');}
 /* Shoot 360 Denver — site styles. Brand tokens live in :root; change them here, not per page. */
 :root{
-  --red:#E0001B; --red-text:#FF2A3C; --red-dark:#C20101; --red-brand:#EF001D;
+  --red:#E0001B; --red-text:#FF2A3C; --red-dark:#C20101; --red-brand:#EF001D; --meter:#22D478;
   --black:#0B0B0B; --ink:#141414; --ink-2:#1C1C1C; --line:#2B2B2B;
   --white:#FFFFFF; --grey-100:#F3F3F3; --grey-300:#C9C9C9; --grey-500:#9A9A9A; --grey-700:#4A4A4A;
   --display:'Rajdhani',ui-sans-serif,system-ui,'Segoe UI',Arial,sans-serif;
@@ -70,7 +70,7 @@ p{margin:0 0 1em}
 .nav-toggle[aria-expanded="true"]::before{transform:translateY(7px) rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span{opacity:0}
 .nav-toggle[aria-expanded="true"]::after{transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:900px){
+@media(max-width:1024px){
   .nav-toggle{display:block}
   .nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--black);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:12px 20px 20px}
   .nav-links.open{display:flex}
@@ -86,7 +86,7 @@ p{margin:0 0 1em}
 .hero h1{margin-bottom:14px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
 .hero .lead{color:#E9E9E9;text-shadow:0 1px 12px rgba(0,0,0,.5)}
 .hero .btns{margin-top:26px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:34px;font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px;color:var(--grey-300)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:34px;font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:18px;color:var(--grey-300)}
 .hero-meta strong{color:#fff}
 .hero-sub{min-height:min(56vh,520px)}
 .hero-sub .wrap{padding-top:110px;padding-bottom:48px}
@@ -169,11 +169,11 @@ a.card:hover{border-color:var(--grey-700);transform:translateY(-2px);transition:
 .panel{background:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
 .sec-light .panel{background:#fff;border-color:#E2E2E2}
 .panel h3{margin-bottom:12px}
-.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours{width:100%;border-collapse:collapse;font-size:18px}
 .hours td{padding:8px 0;border-bottom:1px solid var(--line)}
 .sec-light .hours td{border-color:#E6E6E6}
 .hours td:last-child{text-align:right;font-family:var(--display);font-weight:600;letter-spacing:.03em}
-.addr{font-size:17px;line-height:1.5}
+.addr{font-size:19px;line-height:1.5}
 .addr a{text-decoration:none;font-weight:600;color:#fff}
 .sec-light .addr a{color:var(--black)}
 .addr a:hover{text-decoration:underline}
@@ -235,13 +235,13 @@ a.card:hover{border-color:var(--grey-700);transform:translateY(-2px);transition:
 .prose .note{border-left:4px solid var(--red);padding:12px 16px;background:var(--ink);color:var(--grey-300)}
 
 /* Footer [FT] */
-.ft{background:#050505;border-top:1px solid var(--line);padding:56px 0 28px;font-size:15px;color:var(--grey-300)}
+.ft{background:#050505;border-top:1px solid var(--line);padding:56px 0 28px;font-size:17px;color:var(--grey-300)}
 .ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
 @media(max-width:900px){.ft .cols{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ft .cols{grid-template-columns:1fr}}
-.ft h3{font-size:15px;letter-spacing:.14em;color:var(--grey-500);margin:0 0 12px}
+.ft h3{font-size:16px;letter-spacing:.14em;color:var(--grey-500);margin:0 0 12px}
 .ft ul{list-style:none;padding:0;margin:0}
-.ft li{margin:0 0 8px}
+.ft li{margin:0 0 10px}
 .ft a{color:var(--grey-300);text-decoration:none}
 .ft a:hover{color:#fff;text-decoration:underline}
 .ft .brand img{height:30px;margin-bottom:14px}
@@ -322,3 +322,50 @@ a.card:hover{border-color:var(--grey-700);transform:translateY(-2px);transition:
 
 /* empty Instagram grid stays hidden until a feed id is set */
 #ig:empty{display:none}
+
+/* ===== v0.3 additions ======================================================== */
+/* Programs dropdown */
+.has-sub{position:relative}
+.sub-toggle{background:none;border:0;color:var(--grey-300);font:600 16px/1.6 var(--display);text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;cursor:pointer;border-radius:4px;display:inline-flex;align-items:center;gap:7px}
+.sub-toggle::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px)}
+.sub-toggle:hover,.sub-toggle[aria-expanded="true"],.open-parent .sub-toggle{color:#fff}
+.open-parent .sub-toggle{box-shadow:inset 0 -3px 0 var(--red)}
+.sub{list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:0;min-width:230px;background:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);display:none;z-index:120}
+.has-sub:hover .sub,.has-sub:focus-within .sub,.has-sub .sub-toggle[aria-expanded="true"]+.sub{display:block}
+.sub li a{padding:10px 16px;font-size:15px;letter-spacing:.06em;white-space:nowrap}
+.nav-links .nav-cta{margin-left:26px}
+.nav-links .nav-cta .btn{margin-left:0}
+@media(max-width:1024px){
+  .has-sub .sub,.has-sub:hover .sub,.has-sub:focus-within .sub{position:static;display:none;border:0;box-shadow:none;background:transparent;padding:0 0 6px 14px;min-width:0}
+  .has-sub .sub-toggle[aria-expanded="true"]+.sub{display:block}
+  .sub-toggle{width:100%;justify-content:space-between;padding:14px 8px;font-size:18px}
+  .nav-links .nav-cta{margin:10px 0 0}
+}
+/* Image app badges */
+.badges .badge-app{background:none;border:0;padding:0;display:inline-flex;align-items:center}
+.badges .badge-app img{height:44px;width:auto;display:block}
+.badges .badge-app img[src$="badge-googleplay.png"]{height:66px;margin:-11px -8px}
+.ft-app{font-size:15px;color:var(--grey-500)}
+/* Register-in-the-app strip */
+.appnote{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;background:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-top:18px}
+.appnote p{margin:0;color:var(--grey-300);font-size:15.5px}
+.appnote strong{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+.sec-light .appnote{background:#fff;border-color:#E2E2E2}
+.sec-light .appnote p{color:var(--grey-700)}
+.sec-light .appnote strong{color:var(--black)}
+/* Splash Meter green for the technology benefits */
+.meter .benefit .k,.meter .benefit h3{color:var(--meter)}
+.sec-light .benefit{background:#fff;border-color:#E2E2E2}
+.sec-light .benefit h3{color:var(--black)}
+.sec-light .benefit p{color:var(--grey-700)}
+/* MySpark banner */
+.spark{background:#143E7B;color:#fff;border-bottom:1px solid rgba(255,255,255,.15)}
+.spark-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;padding:16px 0;text-decoration:none;color:inherit}
+.spark-cta img{height:64px;width:auto;border-radius:4px}
+.spark-cta .t{flex:1;min-width:240px}
+.spark-cta strong{display:block;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:22px;line-height:1.1}
+.spark-cta span.s{color:rgba(255,255,255,.85);font-size:16px}
+.spark-cta .btn-ghost{border-color:#fff}
+.spark-cta:hover .btn-ghost{background:#fff;color:#143E7B}
+/* Live counter label */
+.counter .l small{display:block;margin-top:6px;letter-spacing:.08em;font-size:12px;color:var(--grey-500);text-transform:none;font-family:var(--body);font-weight:400}
