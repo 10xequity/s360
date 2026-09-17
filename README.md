@@ -1,6 +1,6 @@
 # Shoot 360 Denver — Website
 
-**Version** 0.4 · **Updated** 2026-09-17 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until DNS moves
+**Version** 0.4.1 · **Updated** 2026-09-17 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until DNS moves
 
 Static site — plain HTML/CSS/JS, no build step — on **GitHub Pages**, the same stack as
 coloradoboom.com and boomtownathletics.com. This repo also holds a complete archive of the Wix site
@@ -22,8 +22,8 @@ counts them and refuses to pass while any remain. Do not ship to the real domain
 
 **Join buttons go straight to Shoot 360's contract signup**, not to HQ's pricing page. Denver's HQ
 location id is `5739019`; contract ids are JV/Rookie 151, Varsity/Pro 152, Committed/All-Star 154,
-Ball is Life/Hall of Fame 156. Tier names, prices and inclusions come from the owner's "Denver Membership
-Options" sheet, not HQ. If a price changes, `memberships.html`, `index.html`, the FAQ list in
+Ball is Life/Hall of Fame 156. Tier names and inclusions come from the owner's "Denver Membership Options"
+sheet; tier **prices match HQ's online checkout for Denver** (owner's instruction, 2026-09-17). If a price changes, `memberships.html`, `index.html`, the FAQ list in
 `scripts/patch_v04.py` and the calculator tiers in `main.js` need a hand edit.
 
 **Header, footer and the FAQ list are generated.** Do not hand-edit them on ten pages; edit `nav()`,

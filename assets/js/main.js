@@ -134,7 +134,7 @@
 (function(){
   var c=document.getElementById('calc'); if(!c)return;
   var rate=c.querySelector('#c-rate'), sess=c.querySelector('#c-sess');
-  var tiers=[{name:'Varsity · 8 sessions',price:189,visits:8},{name:'Committed · unlimited',price:229,visits:null},{name:'Ball is Life · unlimited, 12-month',price:220,visits:null}];
+  var tiers=[{name:'Varsity · 8 sessions',price:199,visits:8},{name:'Ball is Life · unlimited, 12-month',price:379,visits:null},{name:'Committed · unlimited',price:389,visits:null}];
   var money=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
   function calc(){
     var r=+rate.value, s=+sess.value, trainer=r*s;

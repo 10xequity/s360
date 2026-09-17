@@ -2,6 +2,24 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.1 — 2026-09-17 — Owner's answers to the v0.4 questions
+
+- **Tier prices follow Shoot 360's online checkout for Denver** (owner: "use the online prices as the website
+  price"): JV/Rookie **$159**, Varsity/Pro **$199**, Committed/All-Star **$389**, Ball is Life/Hall of Fame **$379**
+  (12-month). Read from `shoot360.com/membership-pricing?locationId=5739019` rendered in a browser on 2026-09-17.
+  Names stay the owner's. "Most popular" moves to Ball is Life, as online. Calculator tiers, JSON-LD offers, FAQ,
+  home teaser and meta descriptions updated. Ball is Life card and table say classes are included.
+- **Drop-In**: $80 a session for non-members; members add a session beyond their plan for **$42** (owner). The
+  sheet's per-tier extra-session prices ($37/$24/$30) are replaced by the flat $42; unlimited tiers stay $0.
+- **Unlimited Classes and Little Ballers: $149** (owner). Not a product on HQ's online page, so unconfirmed there.
+- **Personal training add-ons removed** everywhere (owner: assigned privately). Private training is "arranged
+  individually with a coach"; the email route stays.
+- **Ball is Life includes classes**; JV, Varsity and Committed add them for $40 (owner). The $149 cell was a typo.
+- **Event booking rules removed**: no deposit, lead time, headcount cut-off or reschedule window (owner: the
+  booking system cannot enforce them). Event prices remain proposals in yellow.
+- Placeholders left: 24 (event prices and guest caps, open Saturday dates, family %, pause terms, weekend hours
+  unconfirmed but not flagged).
+
 ## v0.4 — 2026-09-17 — Owner's third review (18 directives)
 
 **Structure.**

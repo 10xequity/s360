@@ -1,37 +1,42 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4 · **Updated** 2026-09-17 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until the owner signs off · **Supersedes** HANDOFF v0.3 (2026-09-16)
+**Version** 0.4.1 · **Updated** 2026-09-17 (midday) · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until the owner signs off · **Supersedes** HANDOFF v0.3 (2026-09-16)
 
 ## Where things stand
 
 - Repo `10xequity/shoot360-denver-site`, branch `main` (lowercase), public, GitHub Pages on.
 - **Ten HTML files**: `index`, `technology`, `publications`, `memberships`, `programs`, `events`, `faq`, `contact`, `legal`, plus `parties.html` (redirect stub → `events.html#parties`, noindex, not in the sitemap).
 - Navigation: Technology ▾ (The technology · Publications · Download the app) · Memberships · Programs ▾ · Events ▾ (Special events · Parties · Date nights) · FAQ · Visit Us · **New Membership**.
-- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **49 yellow placeholders**, 0 problems. It must exit 0 before DNS moves, so every placeholder below needs an owner answer.
+- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **24 yellow placeholders**, 0 problems. It must exit 0 before DNS moves, so every placeholder below needs an owner answer.
 - Owner's v0.4 directives (18) are all built; see CHANGELOG v0.4.
 
 ## Decisions the owner still owes (each is a yellow `class="tbd"` on the site)
 
-| # | Question | Where | Why it is yellow |
+| # | Question | Where | Status |
 |---|---|---|---|
-| 1 | **Drop-In price: $42 or $80 a session?** and same-day extra session $60? | `memberships.html` (#more, table), `faq.html`, `index.html` | The owner's sheet says $42 in the price list and "$80/Session" in the comparison block. Site shows $42. |
-| 2 | **Unlimited Classes / Little Ballers: $159 or $149?** | `memberships.html#classes`, `programs.html#classes`, `faq.html`, `index.html` | Owner wrote $159; the sheet's column and add-on row say $149. Site shows $159. Little Ballers assumed same price. |
-| 3 | **Ball is Life group-class add-on $149?** (others are $40) | `memberships.html#compare` | Sheet shows $149 in that cell; looks like a typo for $40 or "included". |
-| 4 | **Personal training add-ons: 4/$120 and 8/$240** (owner's paste) vs 4/$152, 8/$280, 12/$360 (Jan 2026 "Training" sheet) | `memberships.html#addons`, `faq.html` | Two sheets, two answers. Site shows the paste. |
-| 5 | **Weekend hours.** Weekdays are now 2–9 PM per owner; Sat–Sun still show HQ's 10 AM–5 PM | hero, tables, footer, JSON-LD, `main.js` SHARE bands | Owner said "2 PM to 9 PM" without naming days. |
-| 6 | **Event prices and rules**: 2-Court $449 / members $399, extra guest $20 to 16; Takeover $1,295 / $1,195, up to 24; Date Night $79; Double Date $139; 50% deposit; 2-week lead; 48-h headcount; 7-day reschedule | `events.html` | Proposals from `docs/party-pricing-model_v1_2026-09-17.md`; the owner said pricing "needs to be evaluated". |
-| 7 | **Open Saturday-night dates** (three chips) | `events.html#takeover` | Placeholder dates Oct 10, Oct 24, Nov 14; edit monthly from the Boomtown operations sheet. |
-| 8 | Family discount percentages | `memberships.html#family` | unchanged from v0.2 |
-| 9 | Pause policy terms | `memberships.html#policies` | unchanged from v0.2 |
-| 10 | GoHighLevel embed codes | `contact.html #ghl-contact`, `events.html #ghl-party` | unchanged |
-| 11 | Behold feed id | `index.html #ig` | unchanged |
+| 1 | **Event prices and guest caps**: 2-Court $449 / members $399, extra guest $20 to 16, up to 12; Takeover $1,295 / $1,195, up to 24; Date Night $79; Double Date $139 | `events.html` | Proposals from `docs/party-pricing-model_v1_2026-09-17.md`. Deposit / lead-time / cut-off rules were removed 2026-09-17 because the booking system cannot enforce them. |
+| 2 | **Open Saturday-night dates** (three chips) | `events.html#takeover` | Placeholder dates Oct 10, Oct 24, Nov 14; edit monthly from the Boomtown operations sheet. |
+| 3 | Family discount percentages | `memberships.html#family` | unchanged from v0.2 |
+| 4 | Pause policy terms | `memberships.html#policies` | unchanged from v0.2 |
+| 5 | GoHighLevel embed codes | `contact.html #ghl-contact`, `events.html #ghl-party` | unchanged |
+| 6 | Behold feed id | `index.html #ig` | unchanged |
 
-Not yellow but worth a decision:
-- **HQ checkout prices.** Join buttons open Shoot 360's contract checkout (151/152/154/156). If HQ still has Rookie at $159 etc., members will see one price here and another at checkout. Confirm the Denver contracts in HQ's system read $149/$189/$229/$220.
-- **Google Business Profile pin.** The Shoot 360 Denver listing (CID 8030805088891520148) sits at the street-address centroid, not the FieldhouseUSA building. The site now embeds the FieldhouseUSA listing instead; the owner can move the pin in the Business Profile so the listing itself is right.
-- **"Patented" Splash Meter.** HQ copy says patented; no patent assigned to Shoot 360 was found (the shot-tracking patents are Noah Basketball's; SPLASH METER is a trademark). The site keeps HQ's wording because the franchisee is licensed to use it; the publications page does not repeat "30 patents" or "29 NBA teams use Shoot 360's technology".
-- **Spots remaining.** The owner's sheet has per-tier "new member spots" counts (50/41/31/16/13/20/18). Left off the site because a static number goes stale; the table says spots are limited and the desk has the count.
-- **Wilson logo.** No Wilson partnership surfaced in research; the logo is carried from the Wix site.
+Answered 2026-09-17 (v0.4.1): tier prices = HQ's online Denver prices ($159/$199/$389/$379); Drop-In $80 non-member,
+$42 member extra session; Unlimited Classes and Little Ballers $149; no personal-training add-ons on the site; Ball
+is Life includes classes, the others add them for $40.
+
+Not yellow but still open:
+- **Weekend hours.** Weekdays are 2–9 PM per owner; Sat–Sun still show HQ's 10 AM–5 PM. Asked twice, not answered.
+- **Committed / All-Star classes.** HQ's online page lists "unlimited classes" inside All-Star; the owner says
+  Committed adds classes for $40 and only Ball is Life includes them. Site follows the owner; checkout may read differently.
+- **Vimeo playback** on the review domain is unverified (Vimeo blocks automated browsers). The clips belong to a
+  basic account named Josef Slezak; if they refuse to play, that account must allow the domain or the owner re-uploads.
+- **Google Business Profile pin** sits at the street-address centroid, not the FieldhouseUSA building; the site
+  embeds the FieldhouseUSA listing instead.
+- **"Patented" Splash Meter.** HQ copy says patented; no patent assigned to Shoot 360 was found (the shot-tracking
+  patents are Noah Basketball's; SPLASH METER is a trademark). Kept because the franchisee is licensed to use HQ copy.
+- **Spots remaining** counts from the owner's sheet are left off; a static number goes stale.
+- **Wilson logo**: no partnership surfaced in research; carried from the Wix site.
 
 ## How shared blocks are edited now
 
@@ -54,7 +59,9 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 | Address 14200 E Alameda Ave, Aurora CO 80012, inside FieldhouseUSA; phone 720-262-5501; email info@shoot360denver.com | Wix site + shoot360.com/denver + Google listing |
 | FieldhouseUSA building pin 39.7092894, -104.8217123 (Google "Aurora FieldhouseUSA" listing); Shoot 360 listing and street address pin 39.7092942, -104.822972 | Google Maps embed responses, 2026-09-17 |
 | HQ location id **5739019**; contract ids 151/152/154/156 | shoot360.com/membership-pricing, 2026-09-16 |
-| Membership names, prices, inclusions, scheduling windows, fees, commitments | Owner's "Denver Membership Options" sheet pasted 2026-09-17 (+ Jan 2026 PDF in Downloads/Shoot360) |
+| Membership names, inclusions, scheduling windows, fees, commitments | Owner's "Denver Membership Options" sheet pasted 2026-09-17 (+ Jan 2026 PDF in Downloads/Shoot360) |
+| Tier prices $159 / $199 / $389 / $379, 12-visit $480, guest $72 | shoot360.com/membership-pricing?locationId=5739019 rendered 2026-09-17 (owner: "use the online prices") |
+| Drop-In $80 non-member, $42 member; Unlimited Classes $149; no PT add-ons; Ball is Life includes classes; no event deposits | Owner, 2026-09-17 11:40 |
 | Weekday hours 2–9 PM | Owner, 2026-09-17 ("I believe") |
 | Vimeo clips 720241338 (shooting, 14 s) and 720257389 (passing, 14 s), account Josef Slezak, basic | Wix page data + Vimeo oEmbed, 2026-09-17 |
 | My Spark Denver: DPS Foundation, grades 6–8, free/reduced-price meals, $1,000 card, 200+ providers | dpsfoundation.org + search results, 2026-09-17 (owner said "SNAP"; official test is meal eligibility) |
