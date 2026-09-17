@@ -256,7 +256,8 @@ PUBS = '''<!-- [TC-PUB] Publications teaser -->
 </section>
 
 '''
-s = rep(s, '<!-- [TC-08] CTA -->', PUBS + '<!-- [TC-08] CTA -->', f)
+if '[TC-PUB]' not in s:  # insert-before-anchor: guard, or every run adds another copy
+    s = rep(s, '<!-- [TC-08] CTA -->', PUBS + '<!-- [TC-08] CTA -->', f)
 s = rep(s, '<a class="btn btn-ghost" href="programs.html">Programs &amp; Pricing</a>', '<a class="btn btn-ghost" href="memberships.html">Memberships</a>', f)
 Path(f).write_text(s, encoding='utf-8')
 
@@ -321,7 +322,8 @@ Path(f).write_text(s, encoding='utf-8')
 
 # ---------------------------------------------------------------- legal.html: Vimeo in the third-party services list
 f = 'legal.html'; s = Path(f).read_text(encoding='utf-8')
-s = rep(s, 'No Instagram login is involved.</p>', 'No Instagram login is involved.</p>\n    <h3>Vimeo video clips</h3>\n    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>', f)
+if '<h3>Vimeo video clips</h3>' not in s:  # insert-after-anchor: guard, or every run adds another copy
+    s = rep(s, 'No Instagram login is involved.</p>', 'No Instagram login is involved.</p>\n    <h3>Vimeo video clips</h3>\n    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>', f)
 Path(f).write_text(s, encoding='utf-8')
 
 # ---------------------------------------------------------------- sitemap

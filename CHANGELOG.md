@@ -17,6 +17,7 @@ Newest first. Each entry says what changed and why, so the next person does not 
 - **Ball is Life includes classes**; JV, Varsity and Committed add them for $40 (owner). The $149 cell was a typo.
 - **Event booking rules removed**: no deposit, lead time, headcount cut-off or reschedule window (owner: the
   booking system cannot enforce them). Event prices remain proposals in yellow.
+- **Fix**: the two insert steps in `patch_v04.py` (Vimeo privacy note on legal, publications teaser on technology) re-inserted on every run; v0.4 shipped three copies of each and v0.4.1 seven. Guarded, files deduplicated to one copy.
 - Placeholders left: 24 (event prices and guest caps, open Saturday dates, family %, pause terms, weekend hours
   unconfirmed but not flagged).
 
