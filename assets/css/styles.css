@@ -369,3 +369,80 @@ a.card:hover{border-color:var(--grey-700);transform:translateY(-2px);transition:
 .spark-cta:hover .btn-ghost{background:#fff;color:#143E7B}
 /* Live counter label */
 .counter .l small{display:block;margin-top:6px;letter-spacing:.08em;font-size:12px;color:var(--grey-500);text-transform:none;font-family:var(--body);font-weight:400}
+
+/* ===== v0.4 additions ======================================================== */
+/* 1. Partners: logos in a row, label under them, Nuggets 40% larger */
+.trust .wrap{flex-direction:column;gap:16px}
+.trust .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px 56px}
+.trust img.lg{height:42px}
+/* 2. shots tracked in Splash Meter green; 8. BOOM letters yellow, value headings green; 9. facility stats red */
+.counter .n{color:var(--meter)}
+.value b{color:#F5C400}
+.value h3{color:var(--meter)}
+.stat b{color:var(--red-text)}
+/* 3. how-it-works steps are links */
+a.step{text-decoration:none;color:inherit;display:block;transition:border-color .18s,transform .18s}
+a.step:hover{border-color:var(--grey-700);transform:translateY(-2px)}
+.step .more{display:block;margin-top:12px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red-text);font-size:15px}
+@media(prefers-reduced-motion:reduce){a.step:hover{transform:none}}
+/* 4. Vimeo embeds, borderless */
+.vimeo{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#000;box-shadow:var(--shadow)}
+.vimeo iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vimeo .cap{position:absolute;left:14px;bottom:12px;font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:3px;pointer-events:none}
+.vimeo-pair{display:grid;gap:14px}
+/* 13. membership comparison table */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #E2E2E2;border-radius:var(--radius);background:#fff}
+.cmp{width:100%;border-collapse:collapse;font-size:14.5px;min-width:980px;color:var(--black)}
+.cmp th,.cmp td{padding:10px 12px;border-bottom:1px solid #E6E6E6;text-align:center;vertical-align:middle}
+.cmp thead th{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:15px;background:var(--black);color:#fff;line-height:1.15;padding:14px 12px}
+.cmp thead th small{display:block;font-size:11px;letter-spacing:.08em;color:var(--grey-300);font-weight:600;margin-top:3px;text-transform:none}
+.cmp th:first-child,.cmp td:first-child{text-align:left;position:sticky;left:0;background:#fff;font-weight:600;z-index:1;min-width:190px;box-shadow:1px 0 0 #E6E6E6}
+.cmp thead th:first-child{background:var(--black)}
+.cmp thead th.hot{background:var(--red)}
+.cmp td.hot{background:#FFF4F5}
+.cmp .y{color:var(--meter);font-weight:700;font-size:20px;line-height:1}
+.cmp .n{color:#C4C4C4}
+.cmp tr.price td{font-family:var(--display);font-weight:700;font-size:21px}
+.cmp tr.price td:first-child{font-family:var(--body);font-size:14.5px}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp td .tbd{font-size:.8em}
+.cmp tr.price td small{display:block;font:600 12px/1.3 var(--body);color:var(--grey-700);margin-top:2px}
+.bigprice{font-family:var(--display);font-weight:700;font-size:30px;line-height:1;margin:0 0 8px}
+.bigprice small{font-size:14px;font-weight:600;color:var(--grey-500);margin-left:2px}
+.sec-light .bigprice small{color:var(--grey-700)}
+.cmp a{color:var(--red-dark);font-weight:700;text-decoration:none}
+.cmp a:hover{text-decoration:underline}
+/* 18. publications list */
+.pubs{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.pubs li{padding:14px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--ink)}
+.pubs .src{display:block;font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--grey-500);margin-bottom:2px}
+.pubs a{font-weight:600;color:#fff;text-decoration:none}
+.pubs a:hover{text-decoration:underline;color:var(--meter)}
+.pubs p{margin:4px 0 0;color:var(--grey-300);font-size:15px}
+.sec-light .pubs li{background:#fff;border-color:#E2E2E2}
+.sec-light .pubs a{color:var(--black)}
+.sec-light .pubs a:hover{color:var(--red-dark)}
+.sec-light .pubs p{color:var(--grey-700)}
+.review cite a{color:inherit;text-decoration:none}
+.review cite a:hover{color:#fff;text-decoration:underline}
+.panel p a{color:inherit;font-weight:600}
+/* 15. tabs (events page) */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.tabs [role=tab]{background:none;border:0;border-bottom:3px solid transparent;color:var(--grey-300);font:700 18px/1.2 var(--display);text-transform:uppercase;letter-spacing:.08em;padding:14px 18px;cursor:pointer;margin-bottom:-1px}
+.tabs [role=tab]:hover,.tabs [role=tab][aria-selected=true]{color:#fff}
+.tabs [role=tab][aria-selected=true]{border-bottom-color:var(--red)}
+.tabpanel[hidden]{display:none}
+.dates{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:14px 0 0}
+.dates li{font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;background:var(--ink-2)}
+/* 16. FAQ: hero crop shows heads; section gets a gradient, a basketball and topic chips */
+.hero-img-faq{object-position:50% 20%}
+.faq-sec{position:relative;overflow:hidden;background:radial-gradient(ellipse at 88% 8%,rgba(224,0,27,.30),transparent 46%),radial-gradient(ellipse at 0% 100%,rgba(34,212,120,.12),transparent 42%),var(--black)}
+.faq-ball{position:absolute;right:-130px;top:110px;width:min(46vw,540px);height:auto;opacity:.16;pointer-events:none}
+@media(max-width:900px){.faq-ball{right:-170px;top:auto;bottom:-90px;width:380px}}
+.faq-sec .wrap{position:relative}
+.faq-cats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 30px;max-width:860px}
+.faq-cats a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 16px;background:rgba(255,255,255,.05)}
+.faq-cats a:hover{border-color:var(--red);background:rgba(224,0,27,.18)}
+.faq-sec .faq-item{border-color:rgba(255,255,255,.14)}
+.faq-sec .faq-item:target .faq-q{color:var(--meter)}
+.faq-sec .faq-q{scroll-margin-top:90px}

@@ -1,6 +1,6 @@
 # Shoot 360 Denver — Website
 
-**Version** 0.3 · **Updated** 2026-09-16 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until DNS moves
+**Version** 0.4 · **Updated** 2026-09-17 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until DNS moves
 
 Static site — plain HTML/CSS/JS, no build step — on **GitHub Pages**, the same stack as
 coloradoboom.com and boomtownathletics.com. This repo also holds a complete archive of the Wix site
@@ -21,12 +21,13 @@ has not supplied (party prices, family discount, pause terms). `python scripts/p
 counts them and refuses to pass while any remain. Do not ship to the real domain until it exits 0.
 
 **Join buttons go straight to Shoot 360's contract signup**, not to HQ's pricing page. Denver's HQ
-location id is `5739019`; contract ids are Rookie 151, Pro 152, All-Star 154, Hall of Fame 156;
-packages 12-visit 158, guest 157. Prices on the site are hand-maintained; if HQ changes one,
-`memberships.html`, `index.html`, `faq.html` and the calculator tiers in `main.js` need a hand edit.
+location id is `5739019`; contract ids are JV/Rookie 151, Varsity/Pro 152, Committed/All-Star 154,
+Ball is Life/Hall of Fame 156. Tier names, prices and inclusions come from the owner's "Denver Membership
+Options" sheet, not HQ. If a price changes, `memberships.html`, `index.html`, the FAQ list in
+`scripts/patch_v04.py` and the calculator tiers in `main.js` need a hand edit.
 
-**Header and footer are generated.** Do not hand-edit them on eight pages; edit the `nav()` and
-`FOOTER` templates in the patch script (see `EDITING_GUIDE.md`) and re-run it.
+**Header, footer and the FAQ list are generated.** Do not hand-edit them on ten pages; edit `nav()`,
+`FOOTER` and `FAQ` in `scripts/patch_v04.py` and re-run it (see `EDITING_GUIDE.md`).
 
 **The word "free" is banned from marketing copy** by the owner; say "evaluation" or "come evaluate".
 Every class, camp, league or drop-in mention must say registration is in the Shoot 360 app.
@@ -39,20 +40,21 @@ Every class, camp, league or drop-in mention must say registration is in the Sho
 
 ## Files
 
-**8 pages** — `index.html`, `technology.html`, `memberships.html`, `programs.html`, `parties.html`,
-`faq.html`, `contact.html`, `legal.html`
+**9 pages** — `index.html`, `technology.html`, `publications.html`, `memberships.html`, `programs.html`,
+`events.html`, `faq.html`, `contact.html`, `legal.html` — plus `parties.html`, a noindex redirect stub to
+`events.html#parties` kept for the review link already shared.
 
 | Path | What it is |
 |---|---|
 | `assets/css/styles.css` | All styling. `@font-face`, then brand tokens in `:root` (`--red`, `--red-text`, `--meter` green…). |
-| `assets/js/main.js` | Date-gated visibility, nav toggle + Programs dropdown, scroll reveal, FAQ accordion, video facade, back-to-top, live shots model, savings calculator, Behold loader, analytics hook. |
+| `assets/js/main.js` | Date-gated visibility, nav toggle + dropdowns, scroll reveal, FAQ accordion, video facade, back-to-top, live shots model, savings calculator, Behold loader, analytics hook, hash-selected tabs (events). |
 | `assets/img/` | Web-sized images from the archive, official logo lockups, app badges, MySpark logo. |
 | `assets/video/` | Four 720p clips. |
 | `assets/fonts/` | Rajdhani 600/700, Open Sans variable. |
 | `scripts/preflight.py` | Link, asset, anchor, alt, schema, sitemap and placeholder check. `--external` checks outbound URLs. |
 | `robots.txt`, `sitemap.xml`, `.nojekyll` | SEO and Pages plumbing. **Keep `.nojekyll`.** |
 | `wix-archive/` | The old site: HTML, media, logo pack, fonts, text inventory, screenshots. |
-| `docs/` | Gap analysis, franchise research, design spec. |
+| `docs/` | Gap analysis, franchise research, design spec, party pricing model, publications research log. |
 
 No `CNAME` yet — added at cut-over.
 

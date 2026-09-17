@@ -134,7 +134,7 @@
 (function(){
   var c=document.getElementById('calc'); if(!c)return;
   var rate=c.querySelector('#c-rate'), sess=c.querySelector('#c-sess');
-  var tiers=[{name:'Pro · 8 visits',price:199,visits:8},{name:'Hall of Fame · unlimited',price:379,visits:null},{name:'All-Star · unlimited',price:389,visits:null}];
+  var tiers=[{name:'Varsity · 8 sessions',price:189,visits:8},{name:'Committed · unlimited',price:229,visits:null},{name:'Ball is Life · unlimited, 12-month',price:220,visits:null}];
   var money=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
   function calc(){
     var r=+rate.value, s=+sess.value, trainer=r*s;
@@ -179,7 +179,7 @@
   var el=document.getElementById('shots'); if(!el)return;
   var BASE=375000, EPOCH=Date.UTC(2026,8,16,6,0,0); // 375,000 shots as of 2026-09-16 00:00 America/Denver (UTC-6)
   var BAYS=4, PER_BAY_HOUR=600;
-  var SHARE={weekday:[[13,16,0.35],[16,21,0.85]], weekend:[[10,13,0.55],[13,17,0.70]]}; // [open hour, close hour, share of bays busy]
+  var SHARE={weekday:[[14,16,0.35],[16,21,0.85]], weekend:[[10,13,0.55],[13,17,0.70]]}; // v0.4: weekdays open 2 PM // [open hour, close hour, share of bays busy]
   var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Denver',hour12:false,weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
   function parts(ms){var o={};fmt.formatToParts(new Date(ms)).forEach(function(x){o[x.type]=x.value});o.h=(+o.hour%24)+(+o.minute)/60+(+o.second)/3600;o.we=(o.weekday==='Sat'||o.weekday==='Sun');return o;}
   function rateAt(p){var bands=p.we?SHARE.weekend:SHARE.weekday;for(var i=0;i<bands.length;i++){if(p.h>=bands[i][0]&&p.h<bands[i][1])return bands[i][2]*BAYS*PER_BAY_HOUR;}return 0;}
@@ -195,4 +195,24 @@
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   function render(){var now=Date.now();el.textContent=Math.floor(estimate(now)).toLocaleString('en-US');var live=rateAt(parts(now))>0;el.setAttribute('data-live',live?'1':'0');}
   render(); if(!rm) setInterval(render,1000); else setInterval(render,60000);
+})();
+
+// ===== v0.4 =====================================================================
+// Tabs (events page): <div class="tabs" role="tablist"><button role="tab" aria-controls="panelId">…  Panels: <section class="tabpanel" id="panelId">
+// The URL hash picks the tab (events.html#parties), including a hash that points inside a panel (#takeover).
+(function(){
+  var tl=document.querySelector('.tabs[role=tablist]'); if(!tl)return;
+  var tabs=[].slice.call(tl.querySelectorAll('[role=tab]'));
+  var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
+  function show(i,focus){tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;if(panels[j]){panels[j].hidden=!on;if(on)panels[j].querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});}});if(focus)tabs[i].focus();}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(i);if(history.replaceState)history.replaceState(null,'','#'+panels[i].id);});
+    t.addEventListener('keydown',function(e){var n=i;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();show(n,true);});
+  });
+  function fromHash(){
+    var h=location.hash.replace('#',''), i=-1;
+    if(h){var el=document.getElementById(h); var p=el&&(el.classList.contains('tabpanel')?el:el.closest('.tabpanel')); if(p)i=panels.indexOf(p); if(i>=0&&el!==p){show(i);setTimeout(function(){el.scrollIntoView();},0);return;}}
+    show(i>=0?i:0);
+  }
+  window.addEventListener('hashchange',fromHash); fromHash();
 })();

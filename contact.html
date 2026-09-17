@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"SportsActivityLocation","name":"Shoot 360 Denver","url":"https://www.shoot360denver.com/","telephone":"+1-720-262-5501","email":"info@shoot360denver.com","image":"https://www.shoot360denver.com/assets/img/og-image.jpg","address":{"@type":"PostalAddress","streetAddress":"14200 E Alameda Ave, inside FieldhouseUSA","addressLocality":"Aurora","addressRegion":"CO","postalCode":"80012","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"13:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],"hasMap":"https://www.google.com/maps/search/?api=1&query=14200+E+Alameda+Ave,+Aurora,+CO+80012","sameAs":["https://www.instagram.com/shoot360denver/","https://www.facebook.com/shoot360denver","https://maps.google.com/?cid=8030805088891520148"],"parentOrganization":{"@type":"Organization","name":"Shoot 360","url":"https://www.shoot360.com/"}},
+{"@type":"SportsActivityLocation","name":"Shoot 360 Denver","url":"https://www.shoot360denver.com/","telephone":"+1-720-262-5501","email":"info@shoot360denver.com","image":"https://www.shoot360denver.com/assets/img/og-image.jpg","address":{"@type":"PostalAddress","streetAddress":"14200 E Alameda Ave, inside FieldhouseUSA","addressLocality":"Aurora","addressRegion":"CO","postalCode":"80012","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"14:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"17:00"}],"hasMap":"https://www.google.com/maps/search/?api=1&query=14200+E+Alameda+Ave,+Aurora,+CO+80012","sameAs":["https://www.instagram.com/shoot360denver/","https://www.facebook.com/shoot360denver","https://maps.google.com/?cid=8030805088891520148"],"parentOrganization":{"@type":"Organization","name":"Shoot 360","url":"https://www.shoot360.com/"}},
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.shoot360denver.com/"},{"@type":"ListItem","position":2,"name":"Visit Us","item":"https://www.shoot360denver.com/contact.html"}]}]}
 </script>
 </head>
@@ -36,7 +36,14 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span>Menu</button>
     <nav aria-label="Primary">
       <ul id="primary-nav" class="nav-links">
-        <li><a href="technology.html">Technology</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-tech">Technology</button>
+          <ul id="sub-tech" class="sub">
+            <li><a href="technology.html">The technology</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="technology.html#app">Download the app</a></li>
+          </ul>
+        </li>
         <li><a href="memberships.html">Memberships</a></li>
         <li class="has-sub">
           <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-programs">Programs</button>
@@ -49,7 +56,14 @@
             <li><a href="mailto:info@shoot360denver.com?subject=Private%20training">Private Training</a></li>
           </ul>
         </li>
-        <li><a href="parties.html">Parties</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-events">Events</button>
+          <ul id="sub-events" class="sub">
+            <li><a href="events.html#special">Special events</a></li>
+            <li><a href="events.html#parties">Parties</a></li>
+            <li><a href="events.html#date-night">Date nights</a></li>
+          </ul>
+        </li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html" aria-current="page">Visit Us</a></li>
         <li class="nav-cta"><a class="btn btn-primary btn-sm" href="memberships.html">New Membership</a></li>
@@ -67,7 +81,7 @@
     <p class="crumbs"><a href="index.html">Home</a> › Visit Us</p>
     <p class="eyebrow">Visit us</p>
     <h1 id="h1">Inside FieldhouseUSA,<br>Aurora</h1>
-    <p class="lead">Ten minutes from I-225 and Alameda. Park in the FieldhouseUSA lot and come through the main entrance.</p>
+    <p class="lead">Ten minutes from I-225 and Alameda, inside <a href="https://aurorafieldhouseusa.com/" target="_blank" rel="noopener">Aurora FieldhouseUSA</a>. Park in the FieldhouseUSA lot and come through the main entrance.</p>
   </div>
 </section>
 
@@ -78,11 +92,11 @@
     <div class="info">
       <div class="panel reveal">
         <h3>Address</h3>
-        <p class="addr">Shoot 360 Denver<br>FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012<br>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=14200+E+Alameda+Ave,+Aurora,+CO+80012" target="_blank" rel="noopener">Get directions →</a></p>
+        <p class="addr">Shoot 360 Denver<br><a href="https://aurorafieldhouseusa.com/" target="_blank" rel="noopener">FieldhouseUSA</a><br>14200 E Alameda Ave<br>Aurora, CO 80012<br>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Aurora+FieldhouseUSA,+14200+E+Alameda+Ave,+Aurora,+CO+80012" target="_blank" rel="noopener">Get directions →</a></p>
         <h3 class="mt2">Hours</h3>
         <table class="hours"><tbody>
-          <tr><td>Monday – Friday</td><td>1:00 – 9:00 PM</td></tr>
+          <tr><td>Monday – Friday</td><td>2:00 – 9:00 PM</td></tr>
           <tr><td>Saturday – Sunday</td><td>10:00 AM – 5:00 PM</td></tr>
         </tbody></table>
         <h3 class="mt2">Talk to us</h3>
@@ -90,7 +104,7 @@
         <p class="fine">For membership questions, the fastest route is an evaluation session: you meet a coach and see the technology in person.</p>
         <a class="btn btn-primary" href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Book an Evaluation</a>
       </div>
-      <iframe class="map reveal" title="Map: Shoot 360 Denver at FieldhouseUSA, 14200 E Alameda Ave, Aurora CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=14200+E+Alameda+Ave,+Aurora,+CO+80012&amp;output=embed"></iframe>
+      <iframe class="map reveal" title="Map: Shoot 360 Denver at FieldhouseUSA, 14200 E Alameda Ave, Aurora CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Aurora+FieldhouseUSA,+14200+E+Alameda+Ave,+Aurora,+CO+80012&amp;output=embed"></iframe>
     </div>
   </div>
 </section>
@@ -141,9 +155,9 @@
         <p class="ft-app">Classes, camps, leagues and drop-ins are booked in the Shoot 360 app.</p>
         <div class="badges"><a class="badge-app" href="https://apps.apple.com/us/app/shoot-360/id1177068011" target="_blank" rel="noopener"><img src="assets/img/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" loading="lazy"></a><a class="badge-app" href="https://play.google.com/store/apps/details?id=com.Shoot360.Mobile" target="_blank" rel="noopener"><img src="assets/img/badge-googleplay.png" alt="Get it on Google Play" width="646" height="250" loading="lazy"></a></div>
       </div>
-      <div><h3>Visit</h3><ul><li>FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
-      <div><h3>Hours</h3><ul><li>Mon – Fri: 1 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="programs.html">Programs</a></li><li><a href="parties.html">Birthday Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.teamevo.org/" target="_blank" rel="noopener">Basketball Club — Team EVO</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
+      <div><h3>Visit</h3><ul><li><a href="https://aurorafieldhouseusa.com/" target="_blank" rel="noopener">FieldhouseUSA</a><br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
+      <div><h3>Hours</h3><ul><li>Mon – Fri: 2 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="publications.html">Publications</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events &amp; Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.teamevo.org/" target="_blank" rel="noopener">Basketball Club — Team EVO</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
     </div>
     <div class="legal">
       <span>© 2026 Shoot 360 Denver. An independently owned and operated Shoot 360 location.</span>

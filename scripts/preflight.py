@@ -56,11 +56,14 @@ for f in pages:
 
 sm = Path('sitemap.xml').read_text(encoding='utf-8')
 for f in pages:
+    if 'http-equiv="refresh"' in Path(f).read_text(encoding='utf-8'):
+        continue  # redirect stubs (parties.html -> events.html) are noindex and stay out of the sitemap on purpose
     if f != 'legal.html' and (f if f != 'index.html' else 'shoot360denver.com/</loc>') not in sm:
         problems.append(f'sitemap missing {f}')
 
 def fetch(u, method):
-    req = urllib.request.Request(u, method=method, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0'})
+    req = urllib.request.Request(u, method=method, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0',
+                                                            'Referer': 'https://www.shoot360denver.com/'})  # embed players (Vimeo) answer 401 without a page referer
     return urllib.request.urlopen(req, timeout=20).getcode()
 
 if EXT:

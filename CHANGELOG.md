@@ -2,6 +2,59 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4 — 2026-09-17 — Owner's third review (18 directives)
+
+**Structure.**
+- **Events page** (`events.html`) replaces `parties.html` (a redirect stub stays so the shared review link lands).
+  Three hash-selected tabs: **Special events** (corporate, partnership meetings, bachelor/graduation, team nights,
+  takeovers), **Parties** (birthdays) and **Date nights**. Two formats everywhere: **2-Court** (a shooting bay + a
+  skills court, 2 h, up to 12) and **Full Facility Takeover** (all 8 courts, 2 coaches, Saturday nights after 6 PM
+  on select weekends), plus Date Night / Double Date. Food and drink come from the on-site restaurant and bar (owner
+  rule). "Next open Saturday nights" chips retire themselves with `data-show-until`. Prices are proposals from
+  `docs/party-pricing-model_v1_2026-09-17.md` and are yellow placeholders until the owner confirms.
+- **Publications page** (`publications.html`) under Technology: about 60 sources, every one fetched and read
+  (`docs/publications-research_v1_2026-09-17.md`). Team sources (Warriors, Jazz, Nets/Liberty, Clippers, Squadron),
+  player-owners, national press, partners (Nike/US Sports Camps, Noah, Microsoft, LA Fitness), podcasts and video.
+  The page states the NBA link carefully: the shot-tracking engine is licensed from Noah Basketball, whose install
+  base is what "28 of 30 NBA teams" counts.
+- **Navigation regenerated on every page** by `scripts/patch_v04.py`: Technology ▾ (The technology · Publications ·
+  Download the app → `technology.html#app`) · Memberships · Programs ▾ · Events ▾ (Special events · Parties · Date
+  nights) · FAQ · Visit Us · New Membership. Footer: hours 2–9 PM, FieldhouseUSA linked, Publications and Events links.
+
+**Memberships** (owner's "Denver Membership Options" sheet; HQ's page is not the source).
+- Hoop tiers renamed with app names shown: **JV** (Rookie) 4 sessions $149 · **Varsity** (Pro) 8 sessions $189 ·
+  **Committed** (All-Star) unlimited $229 · **Ball is Life** (Hall of Fame) unlimited, 12-month, $220. Contract links
+  unchanged (151/152/154/156). Per tier: scheduling window, extra-session price, day-time court access, leagues.
+- New: **Unlimited Classes** and **Little Ballers** (ages 6–10) classes-only memberships; **Drop-In**; **Lock-In
+  Reserved** $240 (fixed weekly time); **My Spark / DPS / APS** $1,000 for 6 months, $0 enrollment. Full comparison
+  table; the Jr Nuggets jersey row is omitted for now (owner). Add-ons: personal training 4/$120 and 8/$240,
+  unlimited classes +$40. Policies: $40 one-time enrollment, Aurora tax not included, one-month deposit applied to
+  month 4, no back-to-back sessions, two-strike no-show policy. "15% off camps and clinics" removed site-wide.
+- Calculator tiers in `main.js` now Varsity / Committed / Ball is Life.
+
+**Home.** Partner logos in a row with the label underneath, Nuggets 30→42 px (+40%). Shots counter in Splash Meter
+green. How-it-works steps are links (evaluation form, technology, app). Two **Vimeo** clips carried over from the
+Wix site (720241338 shooting, 720257389 passing) replace the HUD still: borderless, background mode, `dnt=1`.
+BOOM letters yellow `#F5C400`, value headings green, facility stats red. Pricing teaser rebuilt with the new names.
+**Hours** Mon–Fri **2–9 PM** everywhere (hero, tables, footer, FAQ, JSON-LD `opens`, counter model).
+**FieldhouseUSA** linked to aurorafieldhouseusa.com; map embed and directions pinned on the FieldhouseUSA listing
+(39.7092894, -104.8217123), which is the building; the bare street address and the Shoot 360 Google listing both
+pin the mall centroid 100 m west. JSON-LD geo updated.
+
+**Technology.** Skill-court still replaced by the passing Vimeo clip; `#app` anchor and "Download the app"
+heading; publications teaser before the CTA.
+
+**FAQ.** Hero crop `object-position:50% 20%` so heads show. Section gets a red/green gradient, an inline SVG
+basketball and topic chips (Getting started · Technology · Memberships · Programs & app · Visit & My Spark ·
+Events). Questions are generated from one list in `patch_v04.py` into both the HTML and the FAQPage JSON-LD: 35
+questions, including My Spark (DPS grades 6–8, free or reduced-price meals, $1,000 card), Unlimited Classes / Little
+Ballers, what a session is, how often to train, parents watching, what to wear, cancelling, closures, photography.
+
+**Legal.** Vimeo added to the third-party services list.
+**Preflight.** Redirect stubs are exempt from the sitemap check. Sitemap: events + publications added, parties removed.
+
+**Checks.** `preflight`: 10 pages, 82 external URLs, 49 placeholders (proposals and open owner decisions), 0 problems.
+
 ## v0.3 — 2026-09-16 (late) — Owner's second review
 
 **Structure.**

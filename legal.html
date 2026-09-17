@@ -26,7 +26,14 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span>Menu</button>
     <nav aria-label="Primary">
       <ul id="primary-nav" class="nav-links">
-        <li><a href="technology.html">Technology</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-tech">Technology</button>
+          <ul id="sub-tech" class="sub">
+            <li><a href="technology.html">The technology</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="technology.html#app">Download the app</a></li>
+          </ul>
+        </li>
         <li><a href="memberships.html">Memberships</a></li>
         <li class="has-sub">
           <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-programs">Programs</button>
@@ -39,7 +46,14 @@
             <li><a href="mailto:info@shoot360denver.com?subject=Private%20training">Private Training</a></li>
           </ul>
         </li>
-        <li><a href="parties.html">Parties</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-events">Events</button>
+          <ul id="sub-events" class="sub">
+            <li><a href="events.html#special">Special events</a></li>
+            <li><a href="events.html#parties">Parties</a></li>
+            <li><a href="events.html#date-night">Date nights</a></li>
+          </ul>
+        </li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Visit Us</a></li>
         <li class="nav-cta"><a class="btn btn-primary btn-sm" href="memberships.html">New Membership</a></li>
@@ -100,6 +114,12 @@
     <p>The map on the home and Visit Us pages is an embedded Google Map. When it loads, Google receives your IP address and may set cookies under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>. “Read reviews” and “Write a review” links open Google Maps in a new tab.</p>
     <h3>Instagram feed</h3>
     <p>When the Instagram section is active it is rendered by Behold, which fetches public posts from @shoot360denver. Behold receives standard request data from your browser; see <a href="https://behold.so/privacy" target="_blank" rel="noopener">Behold’s privacy policy</a>. No Instagram login is involved.</p>
+    <h3>Vimeo video clips</h3>
+    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>
+    <h3>Vimeo video clips</h3>
+    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>
+    <h3>Vimeo video clips</h3>
+    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>
     <h3>Calculator and counter</h3>
     <p>The savings calculator runs entirely in your browser; nothing you enter is sent anywhere. The shots counter on the home page is an estimate computed from the facility’s court count and opening hours, not a feed of any athlete’s data.</p>
     <h3>Hosting and analytics</h3>
@@ -144,9 +164,9 @@
         <p class="ft-app">Classes, camps, leagues and drop-ins are booked in the Shoot 360 app.</p>
         <div class="badges"><a class="badge-app" href="https://apps.apple.com/us/app/shoot-360/id1177068011" target="_blank" rel="noopener"><img src="assets/img/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" loading="lazy"></a><a class="badge-app" href="https://play.google.com/store/apps/details?id=com.Shoot360.Mobile" target="_blank" rel="noopener"><img src="assets/img/badge-googleplay.png" alt="Get it on Google Play" width="646" height="250" loading="lazy"></a></div>
       </div>
-      <div><h3>Visit</h3><ul><li>FieldhouseUSA<br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
-      <div><h3>Hours</h3><ul><li>Mon – Fri: 1 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="programs.html">Programs</a></li><li><a href="parties.html">Birthday Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.teamevo.org/" target="_blank" rel="noopener">Basketball Club — Team EVO</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
+      <div><h3>Visit</h3><ul><li><a href="https://aurorafieldhouseusa.com/" target="_blank" rel="noopener">FieldhouseUSA</a><br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17202625501">720-262-5501</a></li><li><a href="mailto:info@shoot360denver.com">info@shoot360denver.com</a></li></ul></div>
+      <div><h3>Hours</h3><ul><li>Mon – Fri: 2 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="publications.html">Publications</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events &amp; Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.teamevo.org/" target="_blank" rel="noopener">Basketball Club — Team EVO</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://maps.google.com/?cid=8030805088891520148" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
     </div>
     <div class="legal">
       <span>© 2026 Shoot 360 Denver. An independently owned and operated Shoot 360 location.</span>
