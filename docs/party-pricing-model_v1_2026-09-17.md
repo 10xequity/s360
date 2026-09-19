@@ -1,7 +1,39 @@
 # Party and event pricing model — Shoot 360 Denver
 
-**Version** 1 · **Created** 2026-09-17 · **Status** Proposal for the owner to evaluate · **Supersedes** none
-**Feeds** `events.html` (every price there is a yellow `class="tbd"` placeholder until the owner confirms)
+**Version** 1 · **Created** 2026-09-17 · **Status** Superseded by the owner's prices of 2026-09-19 (see DECISION at the top); the court-hour method below still stands · **Supersedes** none
+**Feeds** `events.html`, which now carries the owner's confirmed prices, not the proposals below
+
+## DECISION — owner's prices, 2026-09-19 (supersedes the proposals below)
+
+The owner set the prices directly. They are lower than this model proposed, and they are what the site now shows.
+
+| Product | Owner's price | What it buys |
+|---|---|---|
+| Two courts | **$160** | 2 hours, two courts, a coach on the floor, room time |
+| Full facility takeover | **$720** | 2 hours, all four courts, exclusive, Saturday nights after 6 PM only |
+
+**Capacity is stations, not floor space.** Two courts hold **ten athletes under 10, or six aged 11 to 17**.
+The four-court figures on the site (20 and 12) are that doubled, which is an inference from the owner's
+two-court numbers, not a number the owner gave. Adult group sizes are settled when booking.
+
+How that lands against the model below (cost of a court-hour $15.07, staff $20/hour, 3 staffed hours per
+2-hour booking):
+
+| | Two courts | Takeover |
+|---|---|---|
+| Court time at cost | $60.28 | $120.56 |
+| Staff | $60.00 (1 coach) | $120.00 (2 coaches) |
+| Total cost | **$120** | **$241** |
+| Price | $160 | $720 |
+| Margin | ~$40, 25% | ~$479, 67% |
+| Per court-hour | $40 | $90 |
+
+The two-court booking is priced at exactly the yardstick a member's court-hour is worth ($40), so it is close
+to break-even once a coach is paid; the money on that product is the restaurant and bar spend, not the court.
+The takeover carries the margin, which is the right shape given it closes the building. Earlier proposals in
+this document ($449 / $1,295 and the deposit, lead-time and cancellation rules) are dead: the owner's booking
+system cannot enforce deposits or cut-offs, so none of that is on the site.
+
 
 ## What the owner asked
 

@@ -1,6 +1,12 @@
 # Shoot 360 Denver — Website
 
-**Version** 0.4.1 · **Updated** 2026-09-17 · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until DNS moves
+**Version** 0.4.3 · **Updated** 2026-09-19 · **Status** Content complete, 0 placeholders. Waiting on one Cloudflare DNS record before www.shoot360denver.com resolves here. · **Supersedes** v0.4.1 (2026-09-17)
+
+**Repo is `10xequity/s360`** (renamed 2026-09-19; the local clone folder may still be called
+`shoot360-denver-site`). **There is no preview URL**: a custom domain is set, so
+`10xequity.github.io/s360/` redirects to `www.shoot360denver.com` and the old path 404s. Open the files
+locally, or address GitHub directly with
+`curl --resolve www.shoot360denver.com:80:185.199.108.153 http://www.shoot360denver.com/`.
 
 Static site — plain HTML/CSS/JS, no build step — on **GitHub Pages**, the same stack as
 coloradoboom.com and boomtownathletics.com. This repo also holds a complete archive of the Wix site

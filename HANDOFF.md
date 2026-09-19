@@ -1,6 +1,6 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4.2 · **Updated** 2026-09-19 · **Status** Cut-over in progress: GitHub side done, Cloudflare `www` record still missing · **Supersedes** HANDOFF v0.4.1 (2026-09-17)
+**Version** 0.4.3 · **Updated** 2026-09-19 · **Status** Content complete (0 placeholders). Cut-over waiting on the Cloudflare `www` record. · **Supersedes** HANDOFF v0.4.2 (2026-09-19)
 
 ## Cut-over status (2026-09-19)
 
@@ -19,29 +19,31 @@ and four apex `A` records to GitHub, **both DNS-only (grey cloud)**, deleting th
 
 ## Where things stand
 
-- Repo `10xequity/shoot360-denver-site`, branch `main` (lowercase), public, GitHub Pages on.
+- Repo **`10xequity/s360`** (renamed by the owner 2026-09-19 from `shoot360-denver-site`; the local clone folder still has the old name). Branch `main` (lowercase), public, GitHub Pages on. **There is no preview URL any more**: the old `github.io` path 404s and the new one redirects to the custom domain, so review happens on the live domain or locally.
 - **Ten HTML files**: `index`, `technology`, `publications`, `memberships`, `programs`, `events`, `faq`, `contact`, `legal`, plus `parties.html` (redirect stub → `events.html#parties`, noindex, not in the sitemap).
 - Navigation: Technology ▾ (The technology · Publications · Download the app) · Memberships · Programs ▾ · Events ▾ (Special events · Parties · Date nights) · FAQ · Visit Us · **New Membership**.
-- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **19 yellow placeholders**, 0 problems. All 19 are on `events.html` (proposed prices, caps and dates). Nothing on the site prints the literal word "TBD" any more.
+- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **0 placeholders, 0 problems**. Every value on the site is now a real one; nothing is highlighted yellow and nothing prints "TBD".
 - Owner's v0.4 directives (18) are all built; see CHANGELOG v0.4.
 
-## Decisions the owner still owes (each is a yellow `class="tbd"` on the site)
+## Decisions the owner still owes (nothing is highlighted on the site any more)
 
 | # | Question | Where | Status |
 |---|---|---|---|
-| 1 | **Event prices and guest caps**: 2-Court $449 / members $399, extra guest $20 to 16, up to 12; Takeover $1,295 / $1,195, up to 24; Date Night $79; Double Date $139 | `events.html` | Proposals from `docs/party-pricing-model_v1_2026-09-17.md`. Deposit / lead-time / cut-off rules were removed 2026-09-17 because the booking system cannot enforce them. |
-| 2 | **Open Saturday-night dates** (three chips) | `events.html#takeover` | Placeholder dates Oct 10, Oct 24, Nov 14; edit monthly from the Boomtown operations sheet. |
-| 3 | Family discount percentages | `memberships.html#family` | **Off the page as of 2026-09-19.** The literal "TBD%" was replaced with "ask at the front desk for today's family pricing", so the live site never prints TBD. Give the percentages and the copy can name them. |
-| 4 | Pause policy terms | `memberships.html#policies` | **Off the page**, same reason: the copy now says memberships can be suspended and to ask the desk for terms and notice period. |
-| 5 | GoHighLevel embed codes | `contact.html #ghl-contact`, `events.html #ghl-party` | unchanged |
-| 6 | Behold feed id | `index.html #ig` | unchanged |
+| 1 | GoHighLevel embed codes | `contact.html #ghl-contact`, `events.html #ghl-party` | still open; page says phone/email meanwhile |
+| 2 | Behold feed id | `index.html #ig` | still open; the Instagram grid hides itself until it is set |
+
+Answered 2026-09-19: **event pricing** — two courts for 2 hours $160, all four courts for 2 hours $720
+(Saturday nights after 6 PM only); capacity ten athletes under 10 or six aged 11–17 on two courts. The
+four-court capacity shown (20 / 12) is that doubled and is an inference, not the owner's number — correct it if
+wrong. Member pricing, extra-guest fees, deposits and lead times are gone; the booking system cannot enforce
+them. **Weekend hours** stay 10 AM–5 PM, and every hours block now points at the Shoot 360 app as the live
+schedule. **Family discount percentages and pause terms** are off the page (see below).
 
 Answered 2026-09-17 (v0.4.1): tier prices = HQ's online Denver prices ($159/$199/$389/$379); Drop-In $80 non-member,
 $42 member extra session; Unlimited Classes and Little Ballers $149; no personal-training add-ons on the site; Ball
 is Life includes classes, the others add them for $40.
 
 Not yellow but still open:
-- **Weekend hours.** Weekdays are 2–9 PM per owner; Sat–Sun still show HQ's 10 AM–5 PM. Asked twice, not answered.
 - **Committed / All-Star classes.** HQ's online page lists "unlimited classes" inside All-Star; the owner says
   Committed adds classes for $40 and only Ball is Life includes them. Site follows the owner; checkout may read differently.
 - **Vimeo playback** on the review domain is unverified (Vimeo blocks automated browsers). The clips belong to a
@@ -63,7 +65,7 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 2. `python scripts/preflight.py` — placeholder count goes down, problems stay 0.
 3. Commit to `main`; Pages redeploys in about a minute.
 
-## Going live (after placeholders are gone)
+## Going live
 
 `CNAME` with `www.shoot360denver.com` → Settings → Pages → Custom domain → DNS (Cloudflare recommended) → Enforce HTTPS → check every page → unpublish Wix → cancel Wix Premium at renewal. Full steps in `DEPLOY_GITHUB.md`. Then Search Console verify + sitemap; point the Google Business Profile website field at the new domain; update `legal.html#services` if analytics go on.
 
@@ -77,7 +79,9 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 | Membership names, inclusions, scheduling windows, fees, commitments | Owner's "Denver Membership Options" sheet pasted 2026-09-17 (+ Jan 2026 PDF in Downloads/Shoot360) |
 | Tier prices $159 / $199 / $389 / $379, 12-visit $480, guest $72 | shoot360.com/membership-pricing?locationId=5739019 rendered 2026-09-17 (owner: "use the online prices") |
 | Drop-In $80 non-member, $42 member; Unlimited Classes $149; no PT add-ons; Ball is Life includes classes; no event deposits | Owner, 2026-09-17 11:40 |
-| Weekday hours 2–9 PM | Owner, 2026-09-17 ("I believe") |
+| Weekday hours 2–9 PM; weekends 10 AM–5 PM, with the app as the live schedule | Owner, 2026-09-17 and 2026-09-19 |
+| Events: two courts 2 h $160, all four courts 2 h $720; ten under-10s or six 11–17 on two courts | Owner, 2026-09-19 |
+| Registrar Porkbun; nameservers moved to Cloudflare 2026-09-19 07:58 | Verisign RDAP, 2026-09-19 |
 | Vimeo clips 720241338 (shooting, 14 s) and 720257389 (passing, 14 s), account Josef Slezak, basic | Wix page data + Vimeo oEmbed, 2026-09-17 |
 | My Spark Denver: DPS Foundation, grades 6–8, free/reduced-price meals, $1,000 card, 200+ providers | dpsfoundation.org + search results, 2026-09-17 (owner said "SNAP"; official test is meal eligibility) |
 | Coaching included; parties sold; homeschool weekdays 2–4 PM; club basketball via Team EVO; GHL forms; "evaluate" not "free" | Owner, 2026-09-16 |
@@ -86,7 +90,7 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 ## Known limits
 
 - The shots counter is a deterministic estimate, labelled as such; weekday bands start at 14:00.
-- Event pricing is a model (`docs/party-pricing-model_v1_2026-09-17.md`), not a quote.
+- Event pricing is the owner's, confirmed 2026-09-19. The court-hour model behind it is in `docs/party-pricing-model_v1_2026-09-17.md`; the proposals in that file are superseded.
 - Vimeo iframes add third-party JavaScript to the home and technology pages; `loading="lazy"` and `dnt=1` limit the cost. If Lighthouse performance drops below the owner's tolerance, swap to poster + click-to-play like the self-hosted clips.
 - Repo is ~250 MB because `wix-archive/` keeps originals.
 

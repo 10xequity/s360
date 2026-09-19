@@ -2,6 +2,26 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.3 — 2026-09-19 — Owner's event prices; hours point at the app; zero placeholders
+
+**Event pricing is the owner's now**, and the whole page is simpler for it. One court rate does all the work:
+**two courts for two hours, $160**, and **all four courts for two hours, $720** on Saturday nights after 6 PM.
+That replaces the proposed $449 / $1,295 tiers, the member prices, the extra-guest fee and the guest caps.
+Capacity is expressed as what it really is, stations rather than floor space: ten athletes under 10, or six
+aged 11 to 17, on two courts. The four-court numbers (20 / 12) are that doubled and are flagged in `HANDOFF.md`
+as an inference. Date nights fold into the same $160 booking instead of a separate hourly rate, with the
+takeover offered for bigger groups. The three invented "open Saturday" chips are gone, replaced by an ask.
+
+**Weekend hours** stay 10 AM–5 PM, with a line under every hours block, in the footer and in the FAQ saying the
+Shoot 360 app has the live schedule, because that is the thing that is actually kept up to date.
+
+**Placeholders: 19 → 0.** `python scripts/preflight.py` now exits clean, which was the condition set in the
+README for pointing the real domain at this site.
+
+`docs/party-pricing-model_v1_2026-09-17.md` keeps the court-hour method but leads with the decision and shows
+the owner's prices against modelled cost: the two-court booking runs at about 25% margin once a coach is paid,
+so the money on it is the restaurant spend; the takeover carries the margin at about 67%.
+
 ## v0.4.2 — 2026-09-19 — Cut-over day: domain checks, TBD text removed
 
 **Cut-over state found this morning.** The registrar moved to Cloudflare today

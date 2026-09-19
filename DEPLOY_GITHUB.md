@@ -13,13 +13,15 @@ Plain static site, no build step. Same hosting pattern as coloradoboom.com.
 
 ## Cut-over checklist
 
-1. **Repo visibility.** GitHub Pages on a free plan needs a **public** repo. Either make
-   `10xequity/shoot360-denver-site` public (Settings → General → Danger Zone → Change visibility) or
-   keep it private on GitHub Pro. Public is fine: the `wix-archive/` folder contains only assets that
-   were already on the public Wix site plus the logo pack.
-2. **Enable Pages.** Settings → Pages → Source: *Deploy from a branch* → `main` → `/ (root)` → Save.
-   Wait for the green check; the site appears at `https://10xequity.github.io/shoot360-denver-site/`.
-   Check every page there first. Note the `og:url`/canonical tags point at the custom domain, which is expected.
+1. **Repo visibility.** ✅ Done. `10xequity/s360` is public (renamed 2026-09-19 from
+   `shoot360-denver-site`; the local clone folder may still carry the old name). Public is fine: the
+   `wix-archive/` folder contains only assets that were already on the public Wix site plus the logo pack —
+   though note it is 238 MB and **is served publicly**, so consider moving it off `main` eventually.
+2. **Enable Pages.** ✅ Done: *Deploy from a branch* → `main` → `/ (root)`. Because step 3 set a custom
+   domain, `https://10xequity.github.io/s360/` now 301s to `www.shoot360denver.com` and the pre-rename path
+   404s — **there is no preview URL any more**. To check a page before DNS resolves, either open the file
+   locally or address GitHub directly:
+   `curl --resolve www.shoot360denver.com:80:185.199.108.153 http://www.shoot360denver.com/`.
 3. **Custom domain.** ✅ Done 2026-09-19. A file named `CNAME` at the repo root contains exactly
    `www.shoot360denver.com`. Settings → Pages shows the same. Do not delete it: Pages drops the custom
    domain the moment that file goes.
