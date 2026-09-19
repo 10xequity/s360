@@ -2,6 +2,30 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.4 — 2026-09-19 — Unlimited tiers repriced; booking windows removed
+
+**Committed and Ball is Life come off HQ's numbers and onto the owner's sheet.** HQ's checkout shows $389 and
+$379 for Denver's All-Star and Hall of Fame; the owner's own pricing sheet says $229 and $220. The site now
+shows **$239** and **$230**, which is the sheet plus the $10 the owner keeps back so staff have something to
+give away when closing in person. That is the same rule the other two tiers already followed — the sheet's
+$149 and $189 are the $159 and $199 HQ publishes — so all four are finally consistent. The in-store discount
+is deliberately not mentioned anywhere on the site. Changed in the tier cards, the comparison table, the home
+teaser, the FAQ, the savings calculator, the `Offer` schema and the meta description; `priceRange` drops to
+`$42–$240`, Lock-In Reserved now being the dearest monthly.
+
+**Booking windows are gone**, at the owner's request: the "book 5 / 6 / 7 days ahead" lines on every tier card
+and the home teaser, the whole **Scheduling window** row in the comparison table, "up to 3 days ahead" on the
+drop-in card and in two FAQ answers, and the policies line about a tier's scheduling window. The FAQ question
+"How far ahead can I book, and can I book back-to-back sessions?" becomes "Can I book back-to-back sessions?",
+keeping the one-at-a-time rule and the Lock-In Reserved exception.
+
+**Fine print corrected.** It claimed prices matched HQ's online checkout, which is no longer true for the two
+unlimited tiers; it now just dates them.
+
+**Open risk:** the Join buttons still point at HQ contracts 154 and 156, and HQ's checkout was showing $379 for
+Hall of Fame when this was written. Until HQ's Denver contracts carry $239 and $230, a member will see one
+price here and another at signup.
+
 ## v0.4.3 — 2026-09-19 — Owner's event prices; hours point at the app; zero placeholders
 
 **Event pricing is the owner's now**, and the whole page is simpler for it. One court rate does all the work:

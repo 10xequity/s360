@@ -1,6 +1,6 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4.3 · **Updated** 2026-09-19 · **Status** Content complete (0 placeholders). Cut-over waiting on the Cloudflare `www` record. · **Supersedes** HANDOFF v0.4.2 (2026-09-19)
+**Version** 0.4.4 · **Updated** 2026-09-19 · **Status** Content complete (0 placeholders). Cut-over waiting on the Cloudflare `www` record. · **Supersedes** HANDOFF v0.4.3 (2026-09-19)
 
 ## Cut-over status (2026-09-19)
 
@@ -44,6 +44,13 @@ $42 member extra session; Unlimited Classes and Little Ballers $149; no personal
 is Life includes classes, the others add them for $40.
 
 Not yellow but still open:
+- **HQ checkout mismatch.** Join buttons open HQ contracts 154 (Committed/All-Star) and 156 (Ball is Life/Hall
+  of Fame). HQ was still showing $389 and $379 for Denver on 2026-09-19 while this site shows $239 and $230.
+  Ask HQ to reprice those two Denver contracts, or expect the price to change under the customer at signup.
+- **Event pricing is unresolved.** The page shows two courts for two hours at $160 and all four at $720, from
+  the owner on 2026-09-19 01:40. At 02:35 the owner added "the 449 is for an hour" and "date night is $60/court
+  for 30 min", which work out at $224.50 and $120 per court-hour against the $40 the $160 implies. Nothing was
+  changed pending an answer; see the question put to the owner in that session.
 - **Committed / All-Star classes.** HQ's online page lists "unlimited classes" inside All-Star; the owner says
   Committed adds classes for $40 and only Ball is Life includes them. Site follows the owner; checkout may read differently.
 - **Vimeo playback** on the review domain is unverified (Vimeo blocks automated browsers). The clips belong to a
@@ -77,7 +84,9 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 | FieldhouseUSA building pin 39.7092894, -104.8217123 (Google "Aurora FieldhouseUSA" listing); Shoot 360 listing and street address pin 39.7092942, -104.822972 | Google Maps embed responses, 2026-09-17 |
 | HQ location id **5739019**; contract ids 151/152/154/156 | shoot360.com/membership-pricing, 2026-09-16 |
 | Membership names, inclusions, scheduling windows, fees, commitments | Owner's "Denver Membership Options" sheet pasted 2026-09-17 (+ Jan 2026 PDF in Downloads/Shoot360) |
-| Tier prices $159 / $199 / $389 / $379, 12-visit $480, guest $72 | shoot360.com/membership-pricing?locationId=5739019 rendered 2026-09-17 (owner: "use the online prices") |
+| Tier prices **$159 / $199 / $239 / $230** | Owner's sheet ($149/$189/$229/$220) **plus $10**, the margin kept back for closing in store. Never say so on the site. JV and Varsity already matched HQ; Committed and Ball is Life were corrected down from HQ's $389/$379 on 2026-09-19. |
+| A session is an hour: 30 min shooting + 30 min skills | Owner 2026-09-19, corroborated by HQ pricing "$39.75 per visit" against the 4-session tier |
+| Members bring a guest for $10 per session | Owner, 2026-09-19 |
 | Drop-In $80 non-member, $42 member; Unlimited Classes $149; no PT add-ons; Ball is Life includes classes; no event deposits | Owner, 2026-09-17 11:40 |
 | Weekday hours 2–9 PM; weekends 10 AM–5 PM, with the app as the live schedule | Owner, 2026-09-17 and 2026-09-19 |
 | Events: two courts 2 h $160, all four courts 2 h $720; ten under-10s or six 11–17 on two courts | Owner, 2026-09-19 |
