@@ -1,13 +1,28 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4.1 · **Updated** 2026-09-17 (midday) · **Status** Public for review at https://10xequity.github.io/shoot360-denver-site/ · shoot360denver.com is still served by Wix until the owner signs off · **Supersedes** HANDOFF v0.3 (2026-09-16)
+**Version** 0.4.2 · **Updated** 2026-09-19 · **Status** Cut-over in progress: GitHub side done, Cloudflare `www` record still missing · **Supersedes** HANDOFF v0.4.1 (2026-09-17)
+
+## Cut-over status (2026-09-19)
+
+| Piece | State |
+|---|---|
+| Registrar nameservers | ✅ `greg.ns.cloudflare.com`, `journey.ns.cloudflare.com` (changed 2026-09-19) |
+| Pages custom domain | ✅ `CNAME` = `www.shoot360denver.com`, build green, serves every page when addressed by that hostname |
+| Cloudflare `www` record | ❌ **does not exist** — `www.shoot360denver.com` is going dark as stale Wix answers expire from resolver caches |
+| Cloudflare apex record | ❌ still `A → 185.230.63.x` (Wix), proxied; 301s to `www` |
+| HTTPS | ❌ `https_enforced: false`; GitHub cannot issue the certificate until DNS resolves to it |
+
+The one remaining action is the DNS table in `DEPLOY_GITHUB.md` step 4: `www` CNAME → `10xequity.github.io`
+and four apex `A` records to GitHub, **both DNS-only (grey cloud)**, deleting the Wix records. Verified on
+2026-09-19 with `curl --resolve www.shoot360denver.com:80:185.199.108.153` that GitHub already answers 200 for
+`/`, `memberships.html`, `events.html`, `publications.html`, `faq.html` and `assets/css/styles.css`.
 
 ## Where things stand
 
 - Repo `10xequity/shoot360-denver-site`, branch `main` (lowercase), public, GitHub Pages on.
 - **Ten HTML files**: `index`, `technology`, `publications`, `memberships`, `programs`, `events`, `faq`, `contact`, `legal`, plus `parties.html` (redirect stub → `events.html#parties`, noindex, not in the sitemap).
 - Navigation: Technology ▾ (The technology · Publications · Download the app) · Memberships · Programs ▾ · Events ▾ (Special events · Parties · Date nights) · FAQ · Visit Us · **New Membership**.
-- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **24 yellow placeholders**, 0 problems. It must exit 0 before DNS moves, so every placeholder below needs an owner answer.
+- `python scripts/preflight.py` today: 10 pages, 82 external URLs, **19 yellow placeholders**, 0 problems. All 19 are on `events.html` (proposed prices, caps and dates). Nothing on the site prints the literal word "TBD" any more.
 - Owner's v0.4 directives (18) are all built; see CHANGELOG v0.4.
 
 ## Decisions the owner still owes (each is a yellow `class="tbd"` on the site)
@@ -16,8 +31,8 @@
 |---|---|---|---|
 | 1 | **Event prices and guest caps**: 2-Court $449 / members $399, extra guest $20 to 16, up to 12; Takeover $1,295 / $1,195, up to 24; Date Night $79; Double Date $139 | `events.html` | Proposals from `docs/party-pricing-model_v1_2026-09-17.md`. Deposit / lead-time / cut-off rules were removed 2026-09-17 because the booking system cannot enforce them. |
 | 2 | **Open Saturday-night dates** (three chips) | `events.html#takeover` | Placeholder dates Oct 10, Oct 24, Nov 14; edit monthly from the Boomtown operations sheet. |
-| 3 | Family discount percentages | `memberships.html#family` | unchanged from v0.2 |
-| 4 | Pause policy terms | `memberships.html#policies` | unchanged from v0.2 |
+| 3 | Family discount percentages | `memberships.html#family` | **Off the page as of 2026-09-19.** The literal "TBD%" was replaced with "ask at the front desk for today's family pricing", so the live site never prints TBD. Give the percentages and the copy can name them. |
+| 4 | Pause policy terms | `memberships.html#policies` | **Off the page**, same reason: the copy now says memberships can be suspended and to ask the desk for terms and notice period. |
 | 5 | GoHighLevel embed codes | `contact.html #ghl-contact`, `events.html #ghl-party` | unchanged |
 | 6 | Behold feed id | `index.html #ig` | unchanged |
 

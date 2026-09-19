@@ -2,6 +2,32 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.2 — 2026-09-19 — Cut-over day: domain checks, TBD text removed
+
+**Cut-over state found this morning.** The registrar moved to Cloudflare today
+(`greg.ns.cloudflare.com`, `journey.ns.cloudflare.com`) and the owner added the `CNAME` file through
+GitHub's UI, so Pages now holds the custom domain and the build is green. Two things were not done:
+the Cloudflare zone has **no `www` record at all**, and the apex still carries Wix's `185.230.63.x`
+proxied through Cloudflare, which is why `shoot360denver.com` still 301s to a `www` that answers only
+from expiring Wix cache. Proved GitHub is otherwise ready with
+`curl --resolve www.shoot360denver.com:80:185.199.108.153`: 200 on the home page, memberships, events,
+publications, FAQ and the stylesheet.
+
+**Docs.** `DEPLOY_GITHUB.md` v1.1: real cut-over status at the top; step 4 replaced with the exact
+record table and the reason both records must be **DNS-only (grey cloud)** — with the Cloudflare proxy
+on, Cloudflare answers the `/.well-known/acme-challenge/` request GitHub uses to issue its certificate,
+so "Enforce HTTPS" never becomes available, and with SSL/TLS mode *Flexible* you also get a redirect
+loop. Four new troubleshooting entries. `HANDOFF.md` v0.4.2 leads with a cut-over status table.
+
+**Live-site copy.** The five remaining `class="tbd"` spans on `memberships.html` printed the literal
+word TBD ("gets TBD% off their membership", "suspend for up to TBD months for $TBD a month"). With the
+domain about to resolve, those were rewritten to say what is true without inventing numbers: ask the
+front desk for today's family pricing, and memberships can be suspended with terms and notice period
+from the desk. Placeholders 24 → 19, all remaining ones on `events.html`.
+
+**Note.** The old Pages build marked "errored" on 17 Sept was a superseded duplicate, not a failure:
+duration 0, and the live bytes match the latest commit once CRLF is normalised.
+
 ## v0.4.1 — 2026-09-17 — Owner's answers to the v0.4 questions
 
 - **Tier prices follow Shoot 360's online checkout for Denver** (owner: "use the online prices as the website
