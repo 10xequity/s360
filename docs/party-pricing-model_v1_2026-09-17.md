@@ -11,16 +11,22 @@ The owner set the prices directly. They are lower than this model proposed, and 
 |---|---|---|
 | Court booking | **$160** | Two courts for two hours — the minimum. More courts or more time **multiplies**: four courts for two hours is $320. |
 | Facility shutdown | **$720** | Two hours with the building closed to everyone else. **Not** a multiple of the court rate: four courts on their own would be $320, so $720 buys exclusivity, not floor space. Saturday nights after 6 PM only. |
-| Date night | **$60 / court / 30 min** | The standard hour (30 min shooting + 30 min skills) is two court-blocks, so **$120**. |
+| Date night | **$60 flat** | One hour for two, 30 min shooting + 30 min skills. **Friday, Saturday and Sunday nights, 7–10 PM only.** Corrected 2026-09-20 from an earlier $60-per-court-per-30-min reading. |
 
 Clarified by the owner on 2026-09-19 (late): *"The 720 is meaning i need to shut down the facility for 2 hours.
 The 160 is 2 courts being used and booked for that period. We would aim to have 2 hour minimum birthdays at $160
 and then multiply from there."*
 
-**A gap worth watching.** The court booking works out at $40 per court-hour, the date-night rate at $120 per
-court-hour — three times as much for the same floor. On one page, a couple reading both will book the two-hour
-party for $160 rather than the one-hour date night for $120. Either date night is premium on purpose (short,
-prime evening, low volume) or the party rate is low; the site states both as given.
+**How the three rates compare.** Court bookings are $40 per court-hour ($160 for two courts over two hours).
+Date night is $60 for one hour on two courts, so $30 per court-hour — the cheapest floor time sold, and it runs
+in the 7–10 PM window when the building is otherwise shut. The facility shutdown is $720 for two hours, which is
+$90 per court-hour across four courts and also covers the staff who run the event. Against the modelled cost of
+$15.07 per court-hour plus $20/hour staff, a $160 party clears about $40 once a coach is paid and a $720
+shutdown clears about $480.
+
+**Note the hours.** Date nights are sold Friday, Saturday and Sunday 7–10 PM, but the published opening hours
+are Mon–Fri 2–9 PM and Sat–Sun 10 AM–5 PM. Every date-night slot is therefore outside normal hours: that is
+fine for a private booking, and it is why the floor is free, but the two sets of times sit on the same site.
 
 **Capacity is stations, not floor space.** Two courts hold **ten athletes under 10, or six aged 11 to 17**.
 The four-court figures on the site (20 and 12) are that doubled, which is an inference from the owner's

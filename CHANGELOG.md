@@ -2,6 +2,26 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.6 — 2026-09-20 — Drop-in vs member sessions untangled; date night corrected
+
+**The two session prices are now impossible to confuse**, which is what the owner asked for. A **Drop-In is
+$72** and that is the price for somebody without a membership; the card leads with "For people without a
+membership" and closes by saying members do not pay it. A **member's additional session is $40**, and that card
+says it is the members' rate and that anyone else books the $72 drop-in instead. The comparison table's
+Additional session row reads $40 across the member columns and n/a for drop-in, since a drop-in *is* the
+session. Every stale $42 and $80 is gone from the tier cards, the home teaser, the FAQ and the schema; the
+`priceRange` is now `$40–$240`.
+
+**The $10 "member brings a guest" line has been pulled** from all pages. It was a third near-identical number
+sitting between $72 and $40 and was the likeliest source of the confusion. It is not deleted from the record —
+see HANDOFF — but it will not go back without the owner saying where it belongs.
+
+**Date night is $60 for the hour**, not $60 per court per half hour, and it sells only **Friday, Saturday and
+Sunday nights between 7 and 10 PM**. The card carries the window in bold and the section lead repeats it.
+
+**The $720 shutdown includes the staff.** Every takeover card and the price-explainer panel now say the staff
+and coaches who run the event are part of the price, not an extra.
+
 ## v0.4.5 — 2026-09-19 (late) — Live on the domain; event pricing explained properly
 
 **The site is live at https://www.shoot360denver.com/.** The Cloudflare `www` record was added and every page,

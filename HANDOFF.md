@@ -1,6 +1,6 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4.5 · **Updated** 2026-09-19 (late) · **Status** **LIVE at https://www.shoot360denver.com/** · **Supersedes** HANDOFF v0.4.4 (2026-09-19)
+**Version** 0.4.6 · **Updated** 2026-09-20 · **Status** **LIVE at https://www.shoot360denver.com/** · **Supersedes** HANDOFF v0.4.5 (2026-09-19)
 
 ## Cut-over status — DONE 2026-09-19
 
@@ -52,10 +52,15 @@ Not yellow but still open:
 - **HQ checkout mismatch.** Join buttons open HQ contracts 154 (Committed/All-Star) and 156 (Ball is Life/Hall
   of Fame). HQ was still showing $389 and $379 for Denver on 2026-09-19 while this site shows $239 and $230.
   Ask HQ to reprice those two Denver contracts, or expect the price to change under the customer at signup.
-- **Event pricing per court-hour is uneven.** Court bookings run at $40 per court-hour ($160 for two courts over
-  two hours) while date nights run at $120 per court-hour ($60 per court per 30 minutes). On the same page, the
-  cheapest way to buy a date night is to book a two-hour party. Deliberate or not, it is visible. The "$449 for
-  an hour" figure mentioned on 2026-09-19 was never reconciled and is not used anywhere.
+- **The $10 members' guest rate is parked, not deleted.** The owner gave it on 2026-09-19 ("additional guests
+  for members is $10/session") and then on 2026-09-20 asked for the drop-in and additional-session prices to be
+  made unmistakable. Three numbers in that range ($72 / $40 / $10) was the confusion, so the $10 came off the
+  site. Decide whether it is a real members' perk, and if so whether it belongs on the memberships page or only
+  at the desk; a $10 guest against a $72 drop-in is a wide gap to publish.
+- **The "$449 for an hour" figure** mentioned on 2026-09-19 was never reconciled with anything else and is used
+  nowhere.
+- **Date-night hours sit outside opening hours.** Date nights sell Fri/Sat/Sun 7–10 PM; the published hours are
+  Mon–Fri 2–9 PM and Sat–Sun 10 AM–5 PM. Correct for a private after-hours booking, but both appear on the site.
 - **Committed / All-Star classes.** HQ's online page lists "unlimited classes" inside All-Star; the owner says
   Committed adds classes for $40 and only Ball is Life includes them. Site follows the owner; checkout may read differently.
 - **Vimeo playback** on the review domain is unverified (Vimeo blocks automated browsers). The clips belong to a
@@ -92,7 +97,8 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 | Tier prices **$159 / $199 / $239 / $230** | Owner's sheet ($149/$189/$229/$220) **plus $10**, the margin kept back for closing in store. Never say so on the site. JV and Varsity already matched HQ; Committed and Ball is Life were corrected down from HQ's $389/$379 on 2026-09-19. |
 | A session is an hour: 30 min shooting + 30 min skills | Owner 2026-09-19, corroborated by HQ pricing "$39.75 per visit" against the 4-session tier |
 | Members bring a guest for $10 per session | Owner, 2026-09-19 |
-| Drop-In $80 non-member, $42 member; Unlimited Classes $149; no PT add-ons; Ball is Life includes classes; no event deposits | Owner, 2026-09-17 11:40 |
+| Drop-In **$72** (non-member), additional session **$40** (member); Unlimited Classes $149; no PT add-ons; Ball is Life includes classes; no event deposits | Owner, 2026-09-17 and corrected 2026-09-20 |
+| Date night $60 for the hour, Fri/Sat/Sun 7–10 PM; $720 shutdown includes staff and coaches | Owner, 2026-09-20 |
 | Weekday hours 2–9 PM; weekends 10 AM–5 PM, with the app as the live schedule | Owner, 2026-09-17 and 2026-09-19 |
 | Events: two courts 2 h $160, all four courts 2 h $720; ten under-10s or six 11–17 on two courts | Owner, 2026-09-19 |
 | Registrar Porkbun; nameservers moved to Cloudflare 2026-09-19 07:58 | Verisign RDAP, 2026-09-19 |
