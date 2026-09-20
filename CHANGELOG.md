@@ -2,6 +2,25 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.5 — 2026-09-19 (late) — Live on the domain; event pricing explained properly
+
+**The site is live at https://www.shoot360denver.com/.** The Cloudflare `www` record was added and every page,
+the sitemap, robots and the assets answer 200 on the real domain. The apex redirects to `www` and plain HTTP
+redirects to HTTPS. The certificate is Let's Encrypt via Cloudflare, valid to 17 November 2026.
+
+**Event pricing now says what it means.** $160 is not a package, it is **two courts for two hours**, the
+smallest booking taken, and more courts or more time multiplies it — four courts for two hours is $320. $720 is
+a different product: it buys **shutting the facility** for two hours, which is why it is not simply double the
+four-court rate. Both tabs carry a "How the price works" panel saying exactly that, and the takeover cards are
+retitled "Close the building" so nobody reads them as just more courts. Date nights bill at **$60 per court per
+30 minutes**, so the standard hour is $120; the date-night card now shows the rate and the hour rather than
+folding into the $160 booking.
+
+**Two notes for the owner**, recorded in `docs/party-pricing-model_v1_2026-09-17.md`: the court booking is $40
+per court-hour while date night is $120 per court-hour, so the cheapest way to buy a date night on this page is
+to book a two-hour party; and Cloudflare's Email Address Obfuscation is rewriting every `mailto:` on the live
+site into `[email protected]` plus a decoder script, which is a Scrape Shield setting, not a site bug.
+
 ## v0.4.4 — 2026-09-19 — Unlimited tiers repriced; booking windows removed
 
 **Committed and Ball is Life come off HQ's numbers and onto the owner's sheet.** HQ's checkout shows $389 and

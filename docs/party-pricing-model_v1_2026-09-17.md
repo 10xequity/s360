@@ -9,8 +9,18 @@ The owner set the prices directly. They are lower than this model proposed, and 
 
 | Product | Owner's price | What it buys |
 |---|---|---|
-| Two courts | **$160** | 2 hours, two courts, a coach on the floor, room time |
-| Full facility takeover | **$720** | 2 hours, all four courts, exclusive, Saturday nights after 6 PM only |
+| Court booking | **$160** | Two courts for two hours — the minimum. More courts or more time **multiplies**: four courts for two hours is $320. |
+| Facility shutdown | **$720** | Two hours with the building closed to everyone else. **Not** a multiple of the court rate: four courts on their own would be $320, so $720 buys exclusivity, not floor space. Saturday nights after 6 PM only. |
+| Date night | **$60 / court / 30 min** | The standard hour (30 min shooting + 30 min skills) is two court-blocks, so **$120**. |
+
+Clarified by the owner on 2026-09-19 (late): *"The 720 is meaning i need to shut down the facility for 2 hours.
+The 160 is 2 courts being used and booked for that period. We would aim to have 2 hour minimum birthdays at $160
+and then multiply from there."*
+
+**A gap worth watching.** The court booking works out at $40 per court-hour, the date-night rate at $120 per
+court-hour — three times as much for the same floor. On one page, a couple reading both will book the two-hour
+party for $160 rather than the one-hour date night for $120. Either date night is premium on purpose (short,
+prime evening, low volume) or the party rate is low; the site states both as given.
 
 **Capacity is stations, not floor space.** Two courts hold **ten athletes under 10, or six aged 11 to 17**.
 The four-court figures on the site (20 and 12) are that doubled, which is an inference from the owner's

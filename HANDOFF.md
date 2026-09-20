@@ -1,21 +1,26 @@
 # HANDOFF — Shoot 360 Denver site
 
-**Version** 0.4.4 · **Updated** 2026-09-19 · **Status** Content complete (0 placeholders). Cut-over waiting on the Cloudflare `www` record. · **Supersedes** HANDOFF v0.4.3 (2026-09-19)
+**Version** 0.4.5 · **Updated** 2026-09-19 (late) · **Status** **LIVE at https://www.shoot360denver.com/** · **Supersedes** HANDOFF v0.4.4 (2026-09-19)
 
-## Cut-over status (2026-09-19)
+## Cut-over status — DONE 2026-09-19
 
 | Piece | State |
 |---|---|
-| Registrar nameservers | ✅ `greg.ns.cloudflare.com`, `journey.ns.cloudflare.com` (changed 2026-09-19) |
-| Pages custom domain | ✅ `CNAME` = `www.shoot360denver.com`, build green, serves every page when addressed by that hostname |
-| Cloudflare `www` record | ❌ **does not exist** — `www.shoot360denver.com` is going dark as stale Wix answers expire from resolver caches |
-| Cloudflare apex record | ❌ still `A → 185.230.63.x` (Wix), proxied; 301s to `www` |
-| HTTPS | ❌ `https_enforced: false`; GitHub cannot issue the certificate until DNS resolves to it |
+| Registrar (Porkbun) nameservers | ✅ Cloudflare (`greg` / `journey`). Nothing further is needed at Porkbun; records left in its panel are ignored. |
+| Cloudflare `www` | ✅ added, **proxied (orange cloud)** → resolves to Cloudflare IPs, which reach GitHub Pages |
+| Cloudflare apex | ✅ 301s to `www` |
+| Certificate | ✅ Let's Encrypt via Cloudflare, `CN=shoot360denver.com`, expires 17 Nov 2026, auto-renewing |
+| Every page on the live domain | ✅ 200, including sitemap, robots, CSS and JS |
+| GitHub `https_enforced` | ❌ **false, and it will stay false while the record is proxied.** Cloudflare answers the ACME challenge GitHub uses, so GitHub never issues its own certificate. Visitors are unaffected — Cloudflare serves HTTPS. |
 
-The one remaining action is the DNS table in `DEPLOY_GITHUB.md` step 4: `www` CNAME → `10xequity.github.io`
-and four apex `A` records to GitHub, **both DNS-only (grey cloud)**, deleting the Wix records. Verified on
-2026-09-19 with `curl --resolve www.shoot360denver.com:80:185.199.108.153` that GitHub already answers 200 for
-`/`, `memberships.html`, `events.html`, `publications.html`, `faq.html` and `assets/css/styles.css`.
+**Optional hardening.** The Cloudflare→GitHub hop is only encrypted if the zone's SSL/TLS mode is Full. To get
+GitHub's own certificate and tick Enforce HTTPS: grey-cloud both records, wait for GitHub to issue, tick the box,
+then re-proxy with SSL/TLS mode **Full (strict)**. Not urgent; the site is correct as it stands.
+
+**Cloudflare Email Address Obfuscation is on** (Scrape Shield). Every `mailto:` on the live site is rewritten to
+`/cdn-cgi/l/email-protection#…` and the footer address renders as `[email protected]` until a decoder script
+runs. Fine for most visitors, invisible to anyone with JavaScript off, and it puts that literal string in the
+HTML that crawlers read. Turn it off in Scrape Shield if the email should be plainly readable.
 
 ## Where things stand
 
@@ -47,10 +52,10 @@ Not yellow but still open:
 - **HQ checkout mismatch.** Join buttons open HQ contracts 154 (Committed/All-Star) and 156 (Ball is Life/Hall
   of Fame). HQ was still showing $389 and $379 for Denver on 2026-09-19 while this site shows $239 and $230.
   Ask HQ to reprice those two Denver contracts, or expect the price to change under the customer at signup.
-- **Event pricing is unresolved.** The page shows two courts for two hours at $160 and all four at $720, from
-  the owner on 2026-09-19 01:40. At 02:35 the owner added "the 449 is for an hour" and "date night is $60/court
-  for 30 min", which work out at $224.50 and $120 per court-hour against the $40 the $160 implies. Nothing was
-  changed pending an answer; see the question put to the owner in that session.
+- **Event pricing per court-hour is uneven.** Court bookings run at $40 per court-hour ($160 for two courts over
+  two hours) while date nights run at $120 per court-hour ($60 per court per 30 minutes). On the same page, the
+  cheapest way to buy a date night is to book a two-hour party. Deliberate or not, it is visible. The "$449 for
+  an hour" figure mentioned on 2026-09-19 was never reconciled and is not used anywhere.
 - **Committed / All-Star classes.** HQ's online page lists "unlimited classes" inside All-Star; the owner says
   Committed adds classes for $40 and only Ball is Life includes them. Site follows the owner; checkout may read differently.
 - **Vimeo playback** on the review domain is unverified (Vimeo blocks automated browsers). The clips belong to a
