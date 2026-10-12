@@ -67,7 +67,7 @@ def nav(cur):
       <ul id="primary-nav" class="nav-links">
         {sub('Technology', 'technology', 'sub-tech', [('technology.html', 'The technology'), ('publications.html', 'Publications'), ('technology.html#app', 'Download the app')])}
         {a('memberships.html', 'Memberships', 'memberships')}
-        {sub('Programs', 'programs', 'sub-programs', [('programs.html', 'All programs'), ('programs.html#classes', 'Classes'), ('programs.html#camps', 'Camps'), ('programs.html#leagues', 'Leagues'), ('https://www.teamevo.org/', 'Basketball Club'), ('mailto:admin@boomtownathletics.com?subject=Private%20training', 'Private Training')])}
+        {sub('Programs', 'programs', 'sub-programs', [('programs.html', 'All programs'), ('programs.html#classes', 'Classes'), ('programs.html#camps', 'Camps'), ('programs.html#leagues', 'Leagues'), ('https://www.teamevo.org/', 'Basketball Club'), ('mailto:admin@shoot360denver.com?subject=Private%20training', 'Private Training')])}
         {sub('Events', 'events', 'sub-events', [('events.html#special', 'Special events'), ('events.html#parties', 'Parties'), ('events.html#date-night', 'Date nights')])}
         {a('faq.html', 'FAQ', 'faq')}
         {a('contact.html', 'Visit Us', 'contact')}
@@ -87,7 +87,7 @@ FOOTER = f'''<!-- [FT] -->
         <p class="ft-app">Classes, camps, leagues and drop-ins are booked in the Shoot 360 app.</p>
         <div class="badges">{BADGES}</div>
       </div>
-      <div><h3>Visit</h3><ul><li><a href="{FH}" target="_blank" rel="noopener">FieldhouseUSA</a><br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17207730050">720-773-0050</a></li><li><a href="mailto:admin@boomtownathletics.com">admin@boomtownathletics.com</a></li></ul></div>
+      <div><h3>Visit</h3><ul><li><a href="{FH}" target="_blank" rel="noopener">FieldhouseUSA</a><br>14200 E Alameda Ave<br>Aurora, CO 80012</li><li><a href="tel:+17207730050">720-773-0050</a></li><li><a href="mailto:admin@shoot360denver.com">admin@shoot360denver.com</a></li></ul></div>
       <div><h3>Hours</h3><ul><li>Mon – Fri: 2 – 9 PM</li><li>Sat – Sun: 10 AM – 5 PM</li><li>Homeschool: Mon – Fri 2 – 4 PM</li><li class="ft-app">Current schedule is in the <a href="technology.html#app">app</a></li></ul></div>
       <div><h3>Explore</h3><ul><li><a href="technology.html">Technology</a></li><li><a href="publications.html">Publications</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events &amp; Parties</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Visit Us</a></li><li><a href="https://www.teamevo.org/" target="_blank" rel="noopener">Basketball Club — Team EVO</a></li><li><a href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Instagram @shoot360denver</a></li><li><a href="https://www.facebook.com/shoot360denver" target="_blank" rel="noopener">Facebook</a></li><li><a href="{GMAPS}" target="_blank" rel="noopener">Reviews on Google</a></li></ul></div>
     </div>
@@ -132,7 +132,7 @@ FAQ = [
  (None, 'Is there a family discount?', 'Yes. Households with more than one athlete get a discount on the second and later memberships. Ask for current family pricing at the front desk or when you book your evaluation.'),
  (None, 'Can I pause my membership?', 'Yes. Memberships can be suspended for injury, travel or a tournament season; ask the front desk for the current terms and notice period. <a href="memberships.html#policies">Membership policies →</a>'),
  (None, 'How do I register for classes, camps and leagues?', 'In the Shoot 360 app, for members and non-members alike. Download it, create your athlete profile, and register from the schedule; drop-in sessions are booked the same way when space permits. <a href="programs.html#app">Get the app →</a>'),
- (None, 'Do you offer private training?', 'Yes. Coaching is already included in every membership; dedicated one-on-one blocks are arranged individually with a coach. Email <a href="mailto:admin@boomtownathletics.com?subject=Private%20training">admin@boomtownathletics.com</a> with the athlete\'s age, level and availability.'),
+ (None, 'Do you offer private training?', 'Yes. Coaching is already included in every membership; dedicated one-on-one blocks are arranged individually with a coach. Email <a href="mailto:admin@shoot360denver.com?subject=Private%20training">admin@shoot360denver.com</a> with the athlete\'s age, level and availability.'),
  (None, 'Do I need to sign a waiver?', 'Yes. Every participant, or a parent or guardian for a minor, agrees to the participation disclaimer before training. <a href="legal.html#disclaimer">Read the full text →</a>'),
 ]
 FAQ_CATS = [('q-start', 'Getting started'), ('q-tech', 'The technology'), ('q-memberships', 'Memberships'), ('q-programs', 'Programs & app'), ('q-visit', 'Visit & My Spark'), ('q-parties', 'Events & parties')]

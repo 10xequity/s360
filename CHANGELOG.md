@@ -2,9 +2,14 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.8 — 2026-10-12 — Contact email is admin@shoot360denver.com
+
+On the owner's correction, every contact address on the site is **admin@shoot360denver.com** (pages, links,
+schema, footer/FAQ templates). v0.4.7 briefly pointed at a mailbox outside this domain.
+
 ## v0.4.7 — 2026-10-12 — New phone number and contact email
 
-**Phone is now 720-773-0050** and **questions go to admin@boomtownathletics.com**, on the owner's
+**Phone is now 720-773-0050** and **questions go to admin@shoot360denver.com**, on the owner's
 instruction. Both replace 720-262-5501 and info@shoot360denver.com everywhere they appeared: the visible
 text and click-to-call / mailto links on every page, the footer and FAQ templates in `scripts/patch_v04.py`
 (so a rebuild cannot bring the old values back), the contact page meta description, and the schema.org

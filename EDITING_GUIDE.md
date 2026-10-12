@@ -36,7 +36,7 @@ Replace the whole span. Pre-flight fails while any remain. Mentions inside HTML 
 | Item | Value | Where |
 |---|---|---|
 | Phone | 720-773-0050 | hero-meta, visit, contact, footer template, FAQ, party FAQ, schema |
-| Email | admin@boomtownathletics.com | contact, footer template, private training, teams, legal |
+| Email | admin@shoot360denver.com | contact, footer template, private training, teams, legal |
 | Hours | Mon–Fri 1–9 PM · Sat–Sun 10 AM–5 PM · Homeschool Mon–Fri 2–4 PM | hero-meta, `[HM-08]`, `contact.html`, footer template, FAQ, JSON-LD ×7, **and the `SHARE` bands in `main.js` for the counter** |
 | Prices | $159 / $199 / $379 / $389 / $480 / $72 | `[HM-06]`, `[MB-TIERS]`, `[MB-PACKS]`, FAQ text + JSON-LD, `makesOffer` in memberships schema, `priceRange`, calculator `tiers` in `main.js` |
 | Contract links | `https://www.shoot360.com/membership-checkout?locationid=5739019&contractid=151/152/154/156`, `packageid=158/157` | every Join / Buy button, memberships `makesOffer` |
