@@ -90,7 +90,7 @@ Header (`[NAV]`…`</header>`) and footer (`[FT]`…`</footer>`) on every page a
 
 | Fact | Source |
 |---|---|
-| Address 14200 E Alameda Ave, Aurora CO 80012, inside FieldhouseUSA; phone 720-262-5501; email info@shoot360denver.com | Wix site + shoot360.com/denver + Google listing |
+| Address 14200 E Alameda Ave, Aurora CO 80012, inside FieldhouseUSA; phone 720-773-0050; email admin@boomtownathletics.com | Wix site + shoot360.com/denver + Google listing |
 | FieldhouseUSA building pin 39.7092894, -104.8217123 (Google "Aurora FieldhouseUSA" listing); Shoot 360 listing and street address pin 39.7092942, -104.822972 | Google Maps embed responses, 2026-09-17 |
 | HQ location id **5739019**; contract ids 151/152/154/156 | shoot360.com/membership-pricing, 2026-09-16 |
 | Membership names, inclusions, scheduling windows, fees, commitments | Owner's "Denver Membership Options" sheet pasted 2026-09-17 (+ Jan 2026 PDF in Downloads/Shoot360) |
