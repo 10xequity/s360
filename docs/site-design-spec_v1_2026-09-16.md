@@ -6,8 +6,7 @@
 ## 1. Goal
 
 Replace the 4-page Wix brochure with a marketing site that turns local search traffic and ad clicks
-into booked free workouts, on the same zero-cost, no-build static stack already running
-coloradoboom.com and boomtownathletics.com (plain HTML/CSS/JS on GitHub Pages behind Cloudflare).
+into booked free workouts, on a zero-cost, no-build static stack (plain HTML/CSS/JS on GitHub Pages behind Cloudflare).
 
 Success looks like: a parent in Aurora searching "basketball training near me" lands, understands
 what Shoot 360 is in ten seconds, sees hours, price and location without hunting, and books a free

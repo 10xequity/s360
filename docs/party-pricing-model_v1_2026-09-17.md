@@ -110,7 +110,7 @@ the walls.
 
 Recommendation: publish the **rule**, not the calendar. The page says "Saturday nights after 6 PM on select
 weekends" and lists the next two or three open Saturdays as chips that retire themselves (`data-show-until`).
-The owner edits three dates a month from the Boomtown operations sheet; the request form asks for two or three
+The owner edits three dates a month from the fieldhouse operations sheet; the request form asks for two or three
 preferred dates so the desk can steer. A live calendar embed would expose the whole fieldhouse schedule, go stale
 the moment a tournament is added, and needs an integration nobody maintains.
 

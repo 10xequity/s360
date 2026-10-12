@@ -8,8 +8,7 @@
 locally, or address GitHub directly with
 `curl --resolve www.shoot360denver.com:80:185.199.108.153 http://www.shoot360denver.com/`.
 
-Static site — plain HTML/CSS/JS, no build step — on **GitHub Pages**, the same stack as
-coloradoboom.com and boomtownathletics.com. This repo also holds a complete archive of the Wix site
+Static site — plain HTML/CSS/JS, no build step — on **GitHub Pages**. This repo also holds a complete archive of the Wix site
 it replaces.
 
 Change history: `CHANGELOG.md`. How to edit safely: `EDITING_GUIDE.md`. What the owner still owes and
