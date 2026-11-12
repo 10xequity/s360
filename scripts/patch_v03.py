@@ -17,10 +17,10 @@ PAGES = ['index.html', 'technology.html', 'memberships.html', 'programs.html', '
 for f in PAGES:
     assert Path(f).exists(), f + ' must exist before the patch runs'
 
-BADGES = ('<a class="badge-app" href="https://apps.apple.com/us/app/shoot-360/id1177068011" target="_blank" rel="noopener"><img src="assets/img/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" loading="lazy"></a>'
-          '<a class="badge-app" href="https://play.google.com/store/apps/details?id=com.Shoot360.Mobile" target="_blank" rel="noopener"><img src="assets/img/badge-googleplay.png" alt="Get it on Google Play" width="646" height="250" loading="lazy"></a>')
-OLD_BADGE_A = '<a href="https://apps.apple.com/us/app/shoot-360/id1177068011" target="_blank" rel="noopener"><span>Download on the<b>App Store</b></span></a>'
-OLD_BADGE_G = '<a href="https://play.google.com/store/apps/details?id=com.Shoot360.Mobile" target="_blank" rel="noopener"><span>Get it on<b>Google Play</b></span></a>'
+BADGES = ('<a class="badge-app" href="https://apps.apple.com/us/app/shoot-360-basketball/id6779412823" target="_blank" rel="noopener"><img src="assets/img/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" loading="lazy"></a>'
+          '<a class="badge-app" href="https://play.google.com/store/apps/details?id=com.shoot360.consumerapp" target="_blank" rel="noopener"><img src="assets/img/badge-googleplay.png" alt="Get it on Google Play" width="646" height="250" loading="lazy"></a>')
+OLD_BADGE_A = '<a href="https://apps.apple.com/us/app/shoot-360-basketball/id6779412823" target="_blank" rel="noopener"><span>Download on the<b>App Store</b></span></a>'
+OLD_BADGE_G = '<a href="https://play.google.com/store/apps/details?id=com.shoot360.consumerapp" target="_blank" rel="noopener"><span>Get it on<b>Google Play</b></span></a>'
 GMAPS = 'https://maps.google.com/?cid=8030805088891520148'
 
 def nav(cur):
@@ -110,8 +110,8 @@ p.write_text(s, encoding='utf-8'); print('contact wording + data note')
 p = Path('faq.html'); s = p.read_text(encoding='utf-8')
 pairs = [
  ('Is the first workout really free?', 'How do I get started?'),
- ('Yes. The free workout is open to first-time visitors and local residents, valid at participating facilities; conditions apply. <a href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Book it online</a> and a coach meets you on the court.',
-  '<a href="https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info" target="_blank" rel="noopener">Book an evaluation session online</a> and a coach meets you on the court. Evaluations are for first-time visitors; a parent or guardian attends with minors.'),
+ ('Yes. The free workout is open to first-time visitors and local residents, valid at participating facilities; conditions apply. <a href="https://shoot360.com/trial?locationId=5739019" target="_blank" rel="noopener">Book it online</a> and a coach meets you on the court.',
+  '<a href="https://shoot360.com/trial?locationId=5739019" target="_blank" rel="noopener">Book an evaluation session online</a> and a coach meets you on the court. Evaluations are for first-time visitors; a parent or guardian attends with minors.'),
  ('Yes. The free workout is open to first-time visitors and local residents, valid at participating facilities; conditions apply. Book it online and a coach meets you on the court.',
   'Book an evaluation session online and a coach meets you on the court. Evaluations are for first-time visitors; a parent or guardian attends with minors.'),
  ('What happens at the free evaluation?', 'What happens at the evaluation?'),

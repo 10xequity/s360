@@ -2,6 +2,21 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.9 — 2026-11-12 — Broken booking, join and app links replaced
+
+A link check found the site's main calls to action dead (confirmed in a browser): the evaluation booking form returned 503,
+every membership "Join now" checkout returned 404, and both app-store listings returned 404 (the old app was removed).
+Replacements come from Shoot 360's own Denver page (shoot360.com/denver, location 5739019):
+
+- **Book an Evaluation** → `shoot360.com/trial?locationId=5739019` (Shoot 360 Denver's "Try it for free").
+- **Join now** → `shoot360.com/pricing/checkout2?locationid=5739019&contractid=…`, same contract IDs as before (151 / 152 / 154 / 156), new checkout path.
+- **App Store** → Shoot 360 Basketball, id6779412823 (Shoot 360, Inc.). **Google Play** → com.shoot360.consumerapp.
+
+Also updated in `scripts/patch_v03.py` / `patch_v04.py` templates so a rebuild cannot bring the old links back.
+Open question for the owner: the Memberships page prices ($159 / $199 / $239 / $230) do not match Shoot 360 Denver's pricing
+page ($389 / $379, marked as placeholder content there). The checkout pages could not be inspected without interacting, so
+plan names and prices behind each Join button are unverified.
+
 ## v0.4.8 — 2026-10-12 — Contact email is admin@shoot360denver.com
 
 On the owner's correction, every contact address on the site is **admin@shoot360denver.com** (pages, links,

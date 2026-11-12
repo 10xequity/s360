@@ -39,8 +39,8 @@ Replace the whole span. Pre-flight fails while any remain. Mentions inside HTML 
 | Email | admin@shoot360denver.com | contact, footer template, private training, teams, legal |
 | Hours | Mon–Fri 1–9 PM · Sat–Sun 10 AM–5 PM · Homeschool Mon–Fri 2–4 PM | hero-meta, `[HM-08]`, `contact.html`, footer template, FAQ, JSON-LD ×7, **and the `SHARE` bands in `main.js` for the counter** |
 | Prices | $159 / $199 / $379 / $389 / $480 / $72 | `[HM-06]`, `[MB-TIERS]`, `[MB-PACKS]`, FAQ text + JSON-LD, `makesOffer` in memberships schema, `priceRange`, calculator `tiers` in `main.js` |
-| Contract links | `https://www.shoot360.com/membership-checkout?locationid=5739019&contractid=151/152/154/156`, `packageid=158/157` | every Join / Buy button, memberships `makesOffer` |
-| Evaluation URL | `https://shoot360-prod.saloncloudsplus.io/ghl/athlete-info` | every "Book an Evaluation" |
+| Contract links | `https://shoot360.com/pricing/checkout2?locationid=5739019&contractid=151/152/154/156`, `packageid=158/157` | every Join / Buy button, memberships `makesOffer` |
+| Evaluation URL | `https://shoot360.com/trial?locationId=5739019` | every "Book an Evaluation" |
 | Google listing | `https://maps.google.com/?cid=8030805088891520148` | `[HM-REV]`, footer template, schema |
 | Team EVO | `https://www.teamevo.org/` | nav dropdown, footer template, `[PG-CLUB]` |
 
