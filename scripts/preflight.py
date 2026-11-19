@@ -32,8 +32,13 @@ for f in pages:
             continue
         if u.startswith(('mailto:', 'tel:', 'javascript:')):
             continue
-        if not Path(u.split('#')[0].split('?')[0]).exists():
+        if not Path(u.split('#')[0].split('?')[0].lstrip('/')).exists():  # 404.html uses root-relative paths
             problems.append(f'{f}: missing {u}')
+    for m in re.finditer(r'srcset="([^"]+)"', body):  # every WebP candidate must exist too
+        for cand in m.group(1).split(','):
+            u = cand.split()[0]
+            if not Path(u.lstrip('/')).exists():
+                problems.append(f'{f}: missing srcset {u}')
     for m in re.finditer(r'href="([a-z\-]+\.html)#([\w\-]+)"', h):
         if f'id="{m.group(2)}"' not in Path(m.group(1)).read_text(encoding='utf-8'):
             problems.append(f'{f}: bad anchor {m.group(0)}')
@@ -58,7 +63,7 @@ sm = Path('sitemap.xml').read_text(encoding='utf-8')
 for f in pages:
     if 'http-equiv="refresh"' in Path(f).read_text(encoding='utf-8'):
         continue  # redirect stubs (parties.html -> events.html) are noindex and stay out of the sitemap on purpose
-    if f != 'legal.html' and (f if f != 'index.html' else 'shoot360denver.com/</loc>') not in sm:
+    if f not in ('legal.html', '404.html') and (f if f != 'index.html' else 'shoot360denver.com/</loc>') not in sm:
         problems.append(f'sitemap missing {f}')
 
 def fetch(u, method):
