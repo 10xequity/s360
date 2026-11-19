@@ -67,12 +67,18 @@
   });
 })();
 
-// ===== Hero video: honour reduced motion, never block paint =====================
+// ===== Hero video: honour reduced motion, never block paint, pause button (WCAG 2.2.2) ===
+// .hero-pause is a toggle: aria-pressed="true" means the video is paused.
 (function(){
   var v=document.querySelector('.hero video'); if(!v)return;
+  var b=document.querySelector('.hero-pause');
+  function sync(){ if(b) b.setAttribute('aria-pressed',String(v.paused)); }
+  v.addEventListener('play',sync); v.addEventListener('pause',sync);
+  if(b) b.addEventListener('click',function(){ if(v.paused){ var q=v.play(); if(q&&q.catch) q.catch(function(){}); } else v.pause(); });
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  if(rm){ v.removeAttribute('autoplay'); v.pause(); return; }
-  var p=v.play(); if(p&&p.catch) p.catch(function(){});
+  if(rm){ v.removeAttribute('autoplay'); v.pause(); sync(); return; }
+  var p=v.play(); if(p&&p.catch) p.catch(sync);
+  sync();
 })();
 
 // ===== Back-to-top button ========================================================

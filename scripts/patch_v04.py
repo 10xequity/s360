@@ -42,6 +42,8 @@ def vimeo(vid, title, cap, cls='reveal'):
             f'<span class="cap">{cap}</span></div>')
 VIMEO_SHOOT = ('720241338', 'Splash Meter shooting court: arc, depth and alignment read on every shot', 'Shooting court')
 VIMEO_PASS = ('720257389', 'High-tech passing and ball-handling skill court', 'Skill court')
+HM_VID = '<div class="vid reveal" data-src="assets/video/splash-meter-overlay-720p.mp4" data-label="Shooting with the Splash Meter overlay"><img src="assets/img/poster-splash-overlay.jpg" alt="Shooter with Splash Meter arc, depth and alignment overlay" width="1280" height="720" loading="lazy"><button class="play" type="button" aria-label="Play: shooting with the Splash Meter overlay"></button><span class="cap">Shooting court</span></div>'
+TC_SKILL = '<img src="assets/img/tech-skill-court.jpg" alt="Player working through a ball-handling game in a Shoot 360 skill court" width="1200" height="802" loading="lazy" class="reveal">'
 
 # page file -> nav key for aria-current / open-parent
 PAGES = {'index.html': 'home', 'technology.html': 'technology', 'publications.html': 'technology', 'memberships.html': 'memberships',
@@ -195,7 +197,7 @@ s = rep(s, '<div class="step reveal"><h3>Track and book in the app</h3><p>Every 
         '<a class="step reveal" href="technology.html#app"><h3>Track and book in the app</h3><p>Every workout lands in the Shoot 360 app: shot charts, streaks, achievements, and the schedule where you register for classes, camps and leagues.</p><span class="more">Download the app →</span></a>', f)
 # 4. Vimeo clips replace the HUD still in the technology teaser
 s = rep(s, '<img src="assets/img/tech-splash-meter-hud.jpg" alt="Splash Meter display showing arc, depth and left-right alignment for each shot" width="1600" height="900" loading="lazy" class="reveal">',
-        f'<div class="vimeo-pair reveal">{vimeo(*VIMEO_SHOOT, cls="")}{vimeo(*VIMEO_PASS, cls="")}</div>', f)
+        HM_VID, f)  # v0.4.10: Vimeo answered 401, self-hosted clip instead
 # programs grid card: parties -> events
 s = rep(s, '<div class="card-body"><h3>Birthday parties</h3><p>Private court time, a coach running the games, and a Splash Meter leaderboard finish.</p><span class="more">Party packages →</span></div>',
         '<div class="card-body"><h3>Events &amp; parties</h3><p>Birthday parties, team and corporate events, and date nights on the technology, with a coach running the games.</p><span class="more">See events →</span></div>', f)
@@ -241,7 +243,7 @@ Path(f).write_text(s, encoding='utf-8')
 # ---------------------------------------------------------------- technology.html
 f = 'technology.html'; s = Path(f).read_text(encoding='utf-8')
 s = rep(s, '<img src="assets/img/tech-skill-court.jpg" alt="Player working through a passing game in a Shoot 360 skill court" width="1200" height="802" loading="lazy" class="reveal">',
-        vimeo(*VIMEO_PASS), f)
+        TC_SKILL, f)  # v0.4.10: Vimeo answered 401, the original still instead
 s = rep(s, '<section class="sec sec-light" aria-labelledby="app-h">', '<section class="sec sec-light" id="app" aria-labelledby="app-h">', f)
 s = rep(s, '<h2 id="app-h">Track everything</h2>', '<h2 id="app-h">Download the app</h2>\n      <p class="lead">Members and non-members book sessions, classes, camps and leagues in the Shoot 360 app, and every workout\'s numbers land there too.</p>', f)
 PUBS = '''<!-- [TC-PUB] Publications teaser -->
@@ -324,7 +326,7 @@ Path(f).write_text(s, encoding='utf-8')
 
 # ---------------------------------------------------------------- legal.html: Vimeo in the third-party services list
 f = 'legal.html'; s = Path(f).read_text(encoding='utf-8')
-if '<h3>Vimeo video clips</h3>' not in s:  # insert-after-anchor: guard, or every run adds another copy
+if False:  # v0.4.10: Vimeo embeds removed, so no Vimeo paragraph (was: if '<h3>Vimeo video clips</h3>' not in s)  # insert-after-anchor: guard, or every run adds another copy
     s = rep(s, 'No Instagram login is involved.</p>', 'No Instagram login is involved.</p>\n    <h3>Vimeo video clips</h3>\n    <p>Two short training clips on the home and technology pages stream from Vimeo with Do Not Track enabled (<code>dnt=1</code>), which stops Vimeo from tracking the session or storing analytics cookies. Vimeo still receives standard request data from your browser to deliver the video; see <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">Vimeo’s privacy policy</a>.</p>', f)
 Path(f).write_text(s, encoding='utf-8')
 

@@ -21,6 +21,7 @@
 <link rel="preload" href="assets/fonts/Rajdhani-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/Rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="assets/css/styles.css">
 <!-- Google Search Console — paste the real token and uncomment:
 <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
@@ -85,6 +86,7 @@
   <video autoplay muted loop playsinline preload="metadata" poster="assets/img/poster-facility.jpg" aria-hidden="true" tabindex="-1">
     <source src="assets/video/facility-tour-720p.mp4" type="video/mp4">
   </video>
+  <button class="hero-pause" type="button" aria-label="Pause background video" aria-pressed="false"></button>
   <div class="wrap">
     <p class="eyebrow">Aurora, Colorado · Inside FieldhouseUSA</p>
     <h1 id="hero-h">Get Better<br>Faster.</h1>
@@ -127,9 +129,9 @@
 <!-- [HM-COUNT] Live shots estimate. Baseline and rates live in assets/js/main.js (v0.3 block). -->
 <section class="sec-ink counter" aria-labelledby="cnt-h">
   <div class="wrap">
-    <h2 id="cnt-h" class="sr">Shots tracked</h2>
+    <h2 id="cnt-h" class="sr">Estimated shots tracked</h2>
     <span class="n" id="shots">375,000</span>
-    <span class="l">shots tracked at Shoot 360 Denver<small>Live estimate from four shooting bays during open hours</small></span>
+    <span class="l">estimated shots tracked at Shoot 360 Denver<small>Live estimate from four shooting bays during open hours</small></span>
   </div>
 </section>
 
@@ -149,7 +151,7 @@
 <!-- [HM-04] Technology teaser -->
 <section class="sec sec-ink" aria-labelledby="tech-h">
   <div class="wrap split">
-    <div class="vimeo-pair reveal"><div class="vimeo "><iframe src="https://player.vimeo.com/video/720241338?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" title="Splash Meter shooting court: arc, depth and alignment read on every shot" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><span class="cap">Shooting court</span></div><div class="vimeo "><iframe src="https://player.vimeo.com/video/720257389?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;dnt=1" title="High-tech passing and ball-handling skill court" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><span class="cap">Skill court</span></div></div>
+    <div class="vid reveal" data-src="assets/video/splash-meter-overlay-720p.mp4" data-label="Shooting with the Splash Meter overlay"><img src="assets/img/poster-splash-overlay.jpg" alt="Shooter with Splash Meter arc, depth and alignment overlay" width="1280" height="720" loading="lazy"><button class="play" type="button" aria-label="Play: shooting with the Splash Meter overlay"></button><span class="cap">Shooting court</span></div>
     <div class="reveal">
       <p class="eyebrow">The technology</p>
       <h2 id="tech-h">Fully integrated. Uncompromisingly accurate.</h2>
@@ -293,11 +295,10 @@
   </div>
 </section>
 
-<!-- [HM-IG] Instagram. Set data-feed on #ig to the Behold feed id (same vendor as coloradoboom.com) and the grid fills itself. -->
+<!-- [HM-IG] Instagram. No feed yet, so no grid. To show one, add <div id="ig" class="ig-grid mt2" data-feed="BEHOLD_FEED_ID"></div> under the heading; main.js fills it. -->
 <section class="sec sec-ink" aria-labelledby="ig-h">
   <div class="wrap">
     <div class="center"><p class="eyebrow">Instagram</p><h2 id="ig-h">@shoot360denver</h2></div>
-    <div id="ig" class="ig-grid mt2" data-feed=""></div>
     <div class="center mt2"><a class="btn btn-ghost" href="https://www.instagram.com/shoot360denver/" target="_blank" rel="noopener">Follow on Instagram</a></div>
   </div>
 </section>
