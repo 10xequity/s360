@@ -2,6 +2,13 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.11 — 2026-11-19 — Unsourced Sue Bird claim removed
+
+- **Publications, "The pros"**: the "Breanna Stewart & Sue Bird" panel called Bird an investor, but the news link that
+  sourced it had already been removed as dead. Owner decision: remove the Bird claim. The panel is now Breanna Stewart alone, with
+  the Brooklyn training center details already cited on this page (across from Barclays Center, five shooting cages and
+  three skill cages) and a Fox Business link for her investment. No new facts were added.
+
 ## v0.4.10 — 2026-11-19 — Broken videos replaced, accessibility and image weight
 
 - **Vimeo clips gone.** Both embeds (720241338, 720257389) answered 401. The home technology teaser now plays the
