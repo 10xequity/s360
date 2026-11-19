@@ -57,8 +57,13 @@ Replace the whole span. Pre-flight fails while any remain. Mentions inside HTML 
   `myspark-logo-white.png` (stacked, for dark grounds).
 - **Dropdown**: `.has-sub > .sub-toggle[aria-expanded] + .sub`. Hover/focus-within opens on desktop,
   click toggles everywhere, Escape closes, outside click closes.
-- **GHL slots**: `#ghl-contact`, `#ghl-party` (`hidden`); paste embed, remove `hidden`, delete the callout.
-- **Instagram**: `#ig[data-feed="BEHOLD_ID"]`; empty stays hidden.
+- **GHL slots**: `#ghl-contact`, `#ghl-party` (`hidden`); paste embed, remove `hidden`, delete the callout. On `contact.html` also remove `hidden` from the data note under the slot.
+- **Instagram**: no grid until there is a feed. Add `<div id="ig" class="ig-grid mt2" data-feed="BEHOLD_ID"></div>` under the `[HM-IG]` heading and `main.js` fills it.
+- **Photos**: every content JPEG has WebP versions and `srcset`/`sizes`. New or replaced photo: run `python scripts/webp_srcset.py` (see its header).
+- **Hero video**: `.hero-pause` toggles the background video; `aria-pressed="true"` means paused.
+- **Scroll reveal**: an inline script in each `<head>` adds `html.js`; `.reveal` only hides under `.js`. Keep that line on new pages.
+- **Sitemap**: after committing page changes, `python scripts/sitemap_lastmod.py` sets each `lastmod` from git, then commit `sitemap.xml`.
+- **404**: `404.html` uses root-relative links and assets (`/assets/...`) because Pages serves it at any depth.
 - **Party packages** reuse `.tier` inside `.tiers.t3`. Never inline `grid-template-columns`.
 
 ## Multi-page changes: the method that works

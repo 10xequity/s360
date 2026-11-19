@@ -2,6 +2,29 @@
 
 Newest first. Each entry says what changed and why, so the next person does not undo a decision.
 
+## v0.4.10 — 2026-11-19 — Broken videos replaced, accessibility and image weight
+
+- **Vimeo clips gone.** Both embeds (720241338, 720257389) answered 401. The home technology teaser now plays the
+  self-hosted Splash Meter shooting clip (poster, click to play). No skill-court video exists locally, so the technology
+  page's skill-court slot shows the original skill-court photo again. The Vimeo paragraph left the privacy page, and
+  `scripts/patch_v04.py` no longer puts the embeds back.
+- **Hero video pause button** (WCAG 2.2.2): top right of the home hero, keyboard operable, `aria-pressed`. Reduced-motion
+  visitors still get a paused video.
+- **Counter label** reads "estimated shots tracked"; the model is unchanged.
+- **Empty Instagram grid removed**; heading and Follow button stay. **"Online form coming"** placeholder removed from Visit Us.
+- **Memberships table**: dashes read "Not included" to screen readers; "Members-only leagues". The table's hidden labels
+  were widening the phone page to ~960px; contained now.
+- **Publications**: Lynnwood Times link dropped (expired certificate), Brooklyn Basketball link dropped (now redirects to a
+  generic locations page), Front Office Sports link moved to the article's new address.
+- **Photos**: WebP at 640px and up to 1600px with `srcset`/`sizes` (`scripts/webp_srcset.py`); partner logos cut to 2x
+  their display size. A phone now loads 10–70 KB WebPs where it loaded 50–300 KB JPEGs.
+- **404 page** added (noindex, root-relative). **Sitemap** `lastmod` now comes from git (`scripts/sitemap_lastmod.py`).
+- Scroll-reveal content only hides when JavaScript runs; footer links are at least 24px tall; the phone menu button
+  sits at the right edge; headings use balanced wrapping. Preflight now checks `srcset` files.
+- Hours and the contact email were deliberately not touched (owner is confirming them).
+- Known and not fixed here: `scripts/patch_v04.py` already stopped at its sitemap step before this release (an anchor
+  from v0.4 no longer matches), so it cannot be re-run end to end.
+
 ## v0.4.9 — 2026-11-12 — Broken booking, join and app links replaced
 
 A link check found the site's main calls to action dead (confirmed in a browser): the evaluation booking form returned 503,
